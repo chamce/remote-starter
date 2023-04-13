@@ -5,6 +5,7 @@ import {
   createRemoteComponent,
   createRequires,
 } from "@paciolan/remote-component";
+import { Card } from "./components/Card";
 
 const requires = createRequires({ react: React });
 
@@ -20,7 +21,11 @@ const WrapperRemote = ({ children }) => (
 function App() {
   return (
     <WrapperRemote>
-      <h1>Let's hope this worked!</h1>
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
     </WrapperRemote>
   );
 }
