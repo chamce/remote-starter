@@ -1,7 +1,5 @@
 import * as React from "react";
 import "./App.css";
-// import reactLogo from "./assets/react.svg";
-import Wrapper from "./components/entry";
 
 import {
   createRemoteComponent,
@@ -13,7 +11,10 @@ const requires = createRequires({ react: React });
 const RemoteComponent = createRemoteComponent({ requires });
 
 const WrapperRemote = ({ children }) => (
-  <RemoteComponent url="main.cjs" children={children} />
+  <RemoteComponent
+    url="https://raw.githubusercontent.com/chamce/remote-starter/master/dist/main.cjs"
+    children={children}
+  />
 );
 
 function App() {
