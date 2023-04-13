@@ -1,4 +1,4 @@
-export const Wrapper = ({ children }) => {
+export const Container = ({ children }) => {
   return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
