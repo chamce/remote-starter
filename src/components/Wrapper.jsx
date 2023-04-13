@@ -2,7 +2,7 @@ export const Wrapper = ({ children }) => {
   return (
     <>
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a className="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">
+        <a className="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="/#">
           Company name
         </a>
         <button
@@ -24,7 +24,7 @@ export const Wrapper = ({ children }) => {
         />
         <div className="navbar-nav">
           <div className="nav-item text-nowrap">
-            <a className="nav-link px-3" href="#">
+            <a className="nav-link px-3" href="/#">
               Sign out
             </a>
           </div>
@@ -39,7 +39,7 @@ export const Wrapper = ({ children }) => {
             <div className="position-sticky pt-3 sidebar-sticky">
               <ul className="nav flex-column">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
+                  <a className="nav-link active" aria-current="page" href="/#">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -60,7 +60,7 @@ export const Wrapper = ({ children }) => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link" href="/#">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -81,7 +81,7 @@ export const Wrapper = ({ children }) => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link" href="/#">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -103,7 +103,7 @@ export const Wrapper = ({ children }) => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link" href="/#">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -126,7 +126,7 @@ export const Wrapper = ({ children }) => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link" href="/#">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -148,7 +148,7 @@ export const Wrapper = ({ children }) => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link" href="/#">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -175,7 +175,7 @@ export const Wrapper = ({ children }) => {
                 <span>Saved reports</span>
                 <a
                   className="link-secondary"
-                  href="#"
+                  href="/#"
                   aria-label="Add a new report"
                 >
                   <svg
@@ -199,7 +199,7 @@ export const Wrapper = ({ children }) => {
               </h6>
               <ul className="nav flex-column mb-2">
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link" href="/#">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -223,7 +223,7 @@ export const Wrapper = ({ children }) => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link" href="/#">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -247,7 +247,7 @@ export const Wrapper = ({ children }) => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link" href="/#">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -271,7 +271,7 @@ export const Wrapper = ({ children }) => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <a className="nav-link" href="/#">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"

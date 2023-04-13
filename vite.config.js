@@ -1,6 +1,7 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import eslint from "vite-plugin-eslint";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -13,8 +14,7 @@ export default defineConfig(({ mode }) => ({
       formats: ["cjs"],
     },
     rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled
-      // into your library
+      // make sure to externalize deps that shouldn't be bundled into your library
       external: ["react", "react-dom"],
       output: {
         exports: "named",
@@ -23,6 +23,9 @@ export default defineConfig(({ mode }) => ({
   },
   define:
     mode === "production" ? { "process.env.NODE_ENV": '"production"' } : {},
-  plugins: [react()],
+  plugins: [
+    react(),
+    eslint({ lintOnStart: true, emitError: true, emitWarning: true }),
+  ],
   server: { open: true },
 }));
