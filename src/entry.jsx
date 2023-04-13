@@ -1,6 +1,6 @@
 /**
  * Entrypoint of the Remote Component.
  */
-import { Wrapper } from "./Wrapper";
+import { Wrapper } from "./components/Wrapper";
 
 export default Wrapper;

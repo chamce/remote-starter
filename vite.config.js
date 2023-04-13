@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => ({
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, "src/components/entry.jsx"),
+      entry: resolve(__dirname, "src/entry.jsx"),
       // the proper extensions will be added
       fileName: "main",
       formats: ["cjs"],

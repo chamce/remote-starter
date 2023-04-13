@@ -9,5 +9,8 @@ const requires = createRequires({ react: React });
 const RemoteComponent = createRemoteComponent({ requires });
 
 export const WrapperRemote = ({ children }) => (
-  <RemoteComponent url="main.cjs" children={children} />
+  <RemoteComponent
+    url="https://raw.githubusercontent.com/chamce/remote-starter/master/dist/main.cjs"
+    children={children}
+  />
 );
