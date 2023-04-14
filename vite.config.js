@@ -24,7 +24,12 @@ export default defineConfig(({ mode }) => ({
   define:
     mode === "production" ? { "process.env.NODE_ENV": '"production"' } : {},
   plugins: [
-    react(),
+    react({
+      jsxImportSource: "@emotion/react",
+      babel: {
+        plugins: ["@emotion/babel-plugin"],
+      },
+    }),
     eslint({ lintOnStart: true, emitError: true, emitWarning: true }),
   ],
   server: { open: true },

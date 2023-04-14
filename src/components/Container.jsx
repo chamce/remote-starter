@@ -1,6 +1,10 @@
+import { Global } from "@emotion/react";
+import { styles } from "../styles";
+
 export const Container = ({ children }) => {
   return (
     <>
+      <Global styles={styles} />
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <a className="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="/#">
           Company name
@@ -36,7 +40,7 @@ export const Container = ({ children }) => {
             id="sidebarMenu"
             className="col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse"
           >
-            <div className="bg-danger position-sticky pt-3 sidebar-sticky">
+            <div className="position-sticky pt-3 sidebar-sticky">
               <ul className="nav flex-column">
                 <li className="nav-item">
                   <a className="nav-link active" aria-current="page" href="/#">
