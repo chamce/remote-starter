@@ -8,6 +8,4 @@ const requires = createRequires({ react: React });
 
 const RemoteComponent = createRemoteComponent({ requires });
 
-export const RemoteContainer = ({ children }) => (
-  <RemoteComponent url="main.cjs" children={children} />
-);
+export default RemoteComponent;

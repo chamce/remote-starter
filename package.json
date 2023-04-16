@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp dist/main.cjs public/",
+    "build": "vite build && cp dist/wrapper.cjs public/",
     "preview": "vite preview"
   },
   "dependencies": {

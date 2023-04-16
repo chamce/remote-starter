@@ -1,9 +1,35 @@
-import { GlobalStyle } from "./GlobalStyle";
+import { useExternalScript } from "./useExternalScript";
+import { StyleSheet } from "./StyleSheet";
 
-export const Container = ({ children }) => {
+const bootstrapStyleSheet = {
+  parent: "head",
+  child: "link",
+  attributes: {
+    href: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css",
+    rel: "stylesheet",
+    integrity:
+      "sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ",
+    crossorigin: "anonymous",
+  },
+};
+const bootstrapJavaScript = {
+  parent: "body",
+  child: "script",
+  attributes: {
+    href: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js",
+    integrity:
+      "sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe",
+    crossorigin: "anonymous",
+  },
+};
+
+export const Component = ({ children }) => {
+  // useExternalScript(bootstrapStyleSheet);
+  // useExternalScript(bootstrapJavaScript);
+
   return (
     <>
-      <GlobalStyle />
+      <StyleSheet />
       <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <a className="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="/#">
           Company name
