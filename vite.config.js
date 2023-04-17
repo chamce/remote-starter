@@ -15,7 +15,12 @@ export default defineConfig(({ mode }) => ({
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled into your library
-      external: ["react", "react-dom", "@paciolan/remote-component"],
+      external: [
+        "react",
+        "react-dom",
+        "@paciolan/remote-component",
+        "bootstrap",
+      ],
       output: {
         exports: "named",
       },
