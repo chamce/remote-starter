@@ -1,5 +1,7 @@
-import "bootstrap/dist/js/bootstrap.bundle.min";
+// Bootstrap CSS & Your CSS
 import { StyleSheet } from "./StyleSheet";
+// Bootstrap Bundle JS
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 export const Component = ({ children }) => {
   return (
