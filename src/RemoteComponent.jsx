@@ -6,6 +6,4 @@ import {
 
 const requires = createRequires({ react: React });
 
-const RemoteComponent = createRemoteComponent({ requires });
-
-export default RemoteComponent;
+export const RemoteComponent = createRemoteComponent({ requires });

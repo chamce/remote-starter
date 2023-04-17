@@ -2,7 +2,7 @@ import "./App.css";
 import { Card } from "./components/Card";
 import { Wrapper } from "./components/Wrapper";
 
-function App() {
+export const App = () => {
   return (
     <>
       <Wrapper>
@@ -25,6 +25,4 @@ function App() {
       </Wrapper>
     </>
   );
-}
-
-export default App;
+};
