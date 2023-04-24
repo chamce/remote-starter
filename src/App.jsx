@@ -1,6 +1,6 @@
 import "./App.css";
 import { Card } from "./components/Card";
-import { Wrapper } from "./components/Wrapper";
+import { Wrapper } from "./remote/Wrapper";
 
 export const App = () => {
   return (

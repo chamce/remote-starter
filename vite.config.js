@@ -2,9 +2,11 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import eslint from "vite-plugin-eslint";
+import babel from "vite-plugin-babel";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  loader: { ".js": "jsx" },
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points
@@ -31,6 +33,13 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     eslint({ lintOnStart: true, emitError: true, emitWarning: true }),
+    babel({
+      babelConfig: {
+        babelrc: false,
+        configFile: false,
+        plugins: ["styled-jsx/babel"],
+      },
+    }),
   ],
   server: { open: true },
 }));
