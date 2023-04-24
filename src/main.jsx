@@ -7,3 +7,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <App />
   </React.StrictMode>
 );
+
+// can we get font face included into wrapper css?
