@@ -139,7 +139,11 @@ export const Wrapper = ({ children }) => {
           </div>
         </div>
       </nav>
-      {children}
+      <div className="container">
+        <div className="row">
+          <div className="col">{children}</div>
+        </div>
+      </div>
     </>
   );
 };
