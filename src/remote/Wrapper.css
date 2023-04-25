@@ -70,3 +70,18 @@
 .navbar-toggler-shadow {
   box-shadow: #091e4240 0 1px 1px, #091e4221 0 0 1px 1px;
 }
+@font-face {
+  font-family: avenir;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Avenir"),
+    url(https://fonts.cdnfonts.com/s/71748/avenir_roman_12.woff) format("woff");
+}
+body {
+  font-family: "Avenir", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
