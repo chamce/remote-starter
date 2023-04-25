@@ -1,6 +1,9 @@
 import React from "react";
-import { styles } from "./styles";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import wrapperStyles from "./Wrapper.css?inline";
+import bootstrapStyles from "bootstrap/dist/css/bootstrap.min.css?inline";
+
+const styles = bootstrapStyles + wrapperStyles;
 
 export const Wrapper = ({ children }) => {
   return (
