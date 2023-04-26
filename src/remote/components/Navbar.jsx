@@ -1,5 +1,5 @@
-import { ColorPicker } from "./ColorPicker.jsx";
-import { SearchBar } from "./SearchBar.jsx";
+import { ColorPicker } from "./ColorPicker";
+import { SearchBar } from "./SearchBar";
 
 export const Navbar = () => {
   return (

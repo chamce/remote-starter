@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState } from "react";
-import { useClickOutside } from "../hooks/useClickOutside.jsx";
+import { useClickOutside } from "../hooks/useClickOutside";
 
 const submitSearch = (e) => {
   e.preventDefault();
