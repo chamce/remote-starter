@@ -9,9 +9,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 );
 
 /*
-- can we get font face included into wrapper css?
-
-- is it for bootstrap & styled-jsx to be set to external deps for the wrapper (not bundled)?
+- is it okay for bootstrap & styled-jsx to be set to external deps for the wrapper (not bundled)?
 
 - is it okay to just concatenate the two stylesheets as strings contrary to the docs?
 
