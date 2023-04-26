@@ -1,14 +1,7 @@
-import css from "styled-jsx/css";
 import React from "react";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import wrapperStyles from "./Wrapper.css?inline";
 import bootstrapStyles from "bootstrap/dist/css/bootstrap.min.css?inline";
-
-const button = css`
-  button {
-    color: hotpink;
-  }
-`;
 
 const styles = bootstrapStyles + wrapperStyles;
 
@@ -18,7 +11,6 @@ export const Wrapper = ({ children }) => {
       <style jsx global>
         {styles}
       </style>
-      <style jsx>{button}</style>
       <nav
         className="mb-2 mb-sm-3 eastern-header navbar navbar-expand-lg navbar-dark bg-gradient"
         aria-label="Eighth navbar example"
