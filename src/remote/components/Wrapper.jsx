@@ -13,7 +13,11 @@ export const Wrapper = ({ children }) => {
         {styles}
       </style>
       <Navbar />
-      {children}
+      <div className="container">
+        <div className="row">
+          <div className="col">{children}</div>
+        </div>
+      </div>
     </>
   );
 };
