@@ -34,7 +34,7 @@ export const SearchBar = () => {
         placeholder="Search Eastern"
         aria-label="Search"
       />
-      <div className={"radio-popover w-100 z-3" + (isOpen ? "" : " d-none")}>
+      <div className={"radio-popover w-100" + (isOpen ? "" : " d-none")}>
         <ul className="list-group">
           <li className="list-group-item">
             <input
