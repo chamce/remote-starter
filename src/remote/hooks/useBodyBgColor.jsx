@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 
 function getRGB(c) {
   return parseInt(c, 16) || c;
@@ -35,14 +35,12 @@ export const useBodyBgColor = (footerRef) => {
   );
   const textColor = getTextColor(bgColor);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.localStorage.setItem("backgroundColor", bgColor);
     document.body.style.backgroundColor = bgColor;
   }, [bgColor]);
   useEffect(() => {
-    if (footerRef.current) {
-      footerRef.current.className = "container footer-container-" + textColor;
-    }
+    footerRef.current.className = "container footer-container-" + textColor;
   }, [textColor, footerRef]);
 
   return [bgColor, setBgColor];
