@@ -1,7 +1,6 @@
-import { ColorPicker } from "./ColorPicker";
 import { SearchBar } from "./SearchBar";
 
-export const Navbar = () => {
+export const Header = ({ children }) => {
   return (
     <nav
       className="mb-2 mb-sm-3 eastern-header navbar navbar-expand-lg navbar-dark bg-gradient"
@@ -67,9 +66,7 @@ export const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarsExample07">
           <div className="navbar-nav my-2 my-lg-0 gap-lg-3 ms-auto">
             <div className="nav-link py-0 py-lg-2 px-lg-0">
-              <div className="py-2 py-lg-0">
-                <ColorPicker />
-              </div>
+              <div className="py-2 py-lg-0">{children}</div>
             </div>
             <div className="nav-link py-0 py-lg-2 px-lg-0 text-nowrap">
               <a
