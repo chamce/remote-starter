@@ -1,14 +1,14 @@
-export const Footer = ({ footerRef }) => {
+export const Footer = () => {
   return (
-    <div ref={footerRef} className="container footer-container-dark">
+    <div className="container">
       <div className="row">
         <div className="col-12 col-xxl-10 offset-xxl-1">
           <footer className="py-3 my-3 my-xl-4">
-            <ul className="nav justify-content-center border-bottom border-opacity-50 pb-3 mb-3 eastern-links">
+            <ul className="nav justify-content-center border-bottom pb-3 mb-3 eastern-footer-list">
               <li className="nav-item">
                 <div className="nav-link px-2">
                   <a
-                    className="footer-link"
+                    className="eastern-footer-link"
                     href="https://equity.eku.edu/equal-opportunityaffirmative-action-statement"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -20,7 +20,7 @@ export const Footer = ({ footerRef }) => {
               <li className="nav-item">
                 <div className="nav-link px-2">
                   <a
-                    className="footer-link"
+                    className="eastern-footer-link"
                     href="https://adaccess.eku.edu/accessibility-and-disability-compliance"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -32,7 +32,7 @@ export const Footer = ({ footerRef }) => {
               <li className="nav-item">
                 <div className="nav-link px-2">
                   <a
-                    className="footer-link"
+                    className="eastern-footer-link"
                     href="https://www.eku.edu/eku-privacy-statement/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -44,7 +44,7 @@ export const Footer = ({ footerRef }) => {
               <li className="nav-item">
                 <div className="nav-link px-2">
                   <a
-                    className="footer-link"
+                    className="eastern-footer-link"
                     href="https://form.asana.com/?k=I67xQySiqf7J19FAstuZ_A&d=28839040002083"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -56,7 +56,7 @@ export const Footer = ({ footerRef }) => {
               <li className="nav-item">
                 <div className="nav-link px-2">
                   <a
-                    className="footer-link"
+                    className="eastern-footer-link"
                     href="https://www.google.com/maps/dir//Eastern+Kentucky+University,+Lancaster+Ave,+Richmond,+KY/@37.7353841,-84.3336913,13z"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -68,7 +68,7 @@ export const Footer = ({ footerRef }) => {
               <li className="nav-item">
                 <div className="nav-link px-2">
                   <a
-                    className="footer-link"
+                    className="eastern-footer-link"
                     href="tel:8596221000"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -78,7 +78,7 @@ export const Footer = ({ footerRef }) => {
                 </div>
               </li>
             </ul>
-            <p className="text-center text-opacity-75 eastern-copyright">
+            <p className="text-center eastern-footer-copyright">
               © 2023 Eastern Kentucky University. All Rights Reserved.
             </p>
           </footer>

@@ -1,10 +1,11 @@
 import { useCallback, useRef, useState } from "react";
 import { useClickOutside } from "../hooks/useClickOutside";
-import { useBodyBgColor } from "../hooks/useBodyBgColor";
 import { HexColorPicker } from "react-colorful";
+import { useBodyColor } from "../hooks/useBodyColor";
 
-export const ColorPicker = ({ footerRef }) => {
-  const [color, onChange] = useBodyBgColor(footerRef);
+export const ColorPicker = () => {
+  const [color, setColor] = useBodyColor();
+
   const popover = useRef();
   const [isOpen, toggle] = useState(false);
 
@@ -21,7 +22,7 @@ export const ColorPicker = ({ footerRef }) => {
 
       {isOpen && (
         <div className="popover" ref={popover}>
-          <HexColorPicker color={color} onChange={onChange} />
+          <HexColorPicker color={color} onChange={setColor} />
         </div>
       )}
     </div>
