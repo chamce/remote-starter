@@ -4,6 +4,7 @@ import bootstrapStyles from "bootstrap/dist/css/bootstrap.min.css?raw";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Sidebar } from "./Sidebar";
+import { Content } from "./Content";
 
 const styles = bootstrapStyles + wrapperStyles;
 
@@ -14,11 +15,7 @@ export const Wrapper = ({ children }) => {
         {styles}
       </style>
       <Header />
-      <div className="container">
-        <div className="row">
-          <div className="col">{children}</div>
-        </div>
-      </div>
+      <Content>{children}</Content>
       <Footer />
       <Sidebar />
     </>
