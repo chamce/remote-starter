@@ -2,24 +2,6 @@
   --body-color: white;
   --footer-rgb: 248, 249, 250;
 }
-html {
-  overflow-y: scroll;
-}
-/* @font-face {
-  font-family: avenir;
-  font-style: normal;
-  font-weight: 400;
-  src: local("Avenir"),
-    url(https://fonts.cdnfonts.com/s/71748/avenir_roman_12.woff) format("woff");
-}
-body {
-  font-family: "Avenir", sans-serif;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-} */
 @font-face {
   font-family: questrial;
   font-style: normal;
@@ -31,7 +13,6 @@ body {
 body {
   background-color: var(--body-color);
   font-family: "Questrial", sans-serif;
-  font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -116,8 +97,7 @@ body {
   z-index: 1070;
 }
 .navbar-toggler-shadow {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 /*! CSS Used from: https://www.irserver2.eku.edu/Reports/DataPage/assets/index-d4e0eb73.css */
 .eastern-footer-list,
@@ -137,4 +117,153 @@ body {
 .eastern-footer-link:focus,
 .eastern-footer-link:hover {
   color: rgba(var(--footer-rgb), 1) !important;
+}
+/*! CSS Used from: https://irserver2.eku.edu/reports/datapage/assets/index-d4e0eb73.css */
+.btn-toggle {
+  padding: 0.25rem 0.5rem;
+  font-weight: 600;
+  color: var(--bs-emphasis-color);
+  background-color: transparent;
+}
+.btn-toggle:hover,
+.btn-toggle:focus {
+  color: rgba(var(--bs-emphasis-color-rgb), 0.85);
+  background-color: var(--bs-tertiary-bg);
+}
+.btn-toggle:before {
+  width: 1.25em;
+  line-height: 0;
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+  transition: transform 0.35s ease;
+  transform-origin: 0.5em 50%;
+}
+.btn-toggle[aria-expanded="true"] {
+  color: rgba(var(--bs-emphasis-color-rgb), 0.85);
+}
+.btn-toggle[aria-expanded="true"]:before {
+  transform: rotate(90deg);
+}
+.btn-toggle-nav a {
+  padding: 0.1875rem 0.5rem;
+  margin-top: 0.125rem;
+  margin-left: 1.25rem;
+}
+.btn-toggle-nav a:hover,
+.btn-toggle-nav a:focus {
+  background-color: var(--bs-tertiary-bg);
+}
+/*! CSS Used from: https://irserver2.eku.edu/reports/datapage/assets/index-d4e0eb73.css */
+.transform-align-center-justify-end {
+  transform: translate(100%, -50%);
+}
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.25s;
+  transform-style: preserve-3d;
+}
+.flip-card.flip .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+.offcanvas-btn {
+  width: 45px;
+  height: 45px;
+  transition: all 0.15s ease-in-out;
+}
+@media (max-width: 575.98px) {
+  .opacity-xs-25 {
+    opacity: 0.25;
+  }
+  .opacity-xs-25:hover {
+    opacity: 1;
+  }
+}
+/*! CSS Used from: Embedded */
+.btn-eastern {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: #784052;
+  --bs-btn-border-color: #784052;
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #663646;
+  --bs-btn-hover-border-color: #603342;
+  --bs-btn-focus-shadow-rgb: 140, 93, 108;
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: #603342;
+  --bs-btn-active-border-color: #5a303e;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #ffffff;
+  --bs-btn-disabled-bg: #784052;
+  --bs-btn-disabled-border-color: #784052;
+}
+/*! CSS Used from: Embedded ; media=all */
+@media all {
+  .fa-solid {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: var(--fa-display, inline-block);
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+  }
+  .fa-solid {
+    font-family: "Font Awesome 6 Free";
+  }
+  .fa-lg {
+    font-size: 1.25em;
+    line-height: 0.05em;
+    vertical-align: -0.075em;
+  }
+  .fa-angles-right:before {
+    content: "\f101";
+  }
+  .fa-angles-left:before {
+    content: "\f100";
+  }
+  .fa-solid {
+    font-weight: 900;
+  }
+}
+/*! CSS Used fontfaces */
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(https://ka-f.fontawesome.com/releases/v6.4.0/webfonts/free-fa-regular-400.woff2)
+      format("woff2"),
+    url(https://ka-f.fontawesome.com/releases/v6.4.0/webfonts/free-fa-regular-400.ttf)
+      format("truetype");
+}
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url(https://ka-f.fontawesome.com/releases/v6.4.0/webfonts/free-fa-solid-900.woff2)
+      format("woff2"),
+    url(https://ka-f.fontawesome.com/releases/v6.4.0/webfonts/free-fa-solid-900.ttf)
+      format("truetype");
+}
+.ms-12px {
+  margin-left: 12px;
 }
