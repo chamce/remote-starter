@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <div className="container">
+    <div style={{ fontSize: "0.95rem" }} className="container fs-sm-6">
       <div className="row">
         <div className="col-12 col-xxl-10 offset-xxl-1">
           <footer className="py-3 my-3 my-xl-4">

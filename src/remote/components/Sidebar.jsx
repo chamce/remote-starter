@@ -89,7 +89,8 @@ const groups = [
 const Button = ({ children }) => {
   return (
     <button
-      className="btn-eastern btn ms-12px ms-sm-3 rounded-circle offcanvas-btn opacity-xs-25"
+      style={{ marginLeft: "12px" }}
+      className="btn-eastern btn btn-gradient ms-sm-3 rounded-circle offcanvas-btn opacity-xs-25"
       type="button"
       data-bs-toggle="offcanvas"
       data-bs-target="#offcanvasExample"
