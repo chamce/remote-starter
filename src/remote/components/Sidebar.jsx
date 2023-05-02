@@ -90,7 +90,7 @@ const Button = ({ children }) => {
   return (
     <button
       style={{ marginLeft: "12px" }}
-      className="border-dark btn-eastern btn ms-sm-3 rounded-circle offcanvas-btn opacity-xs-25"
+      className="border-dark btn-maroon btn ms-sm-3 rounded-circle offcanvas-btn opacity-xs-25"
       type="button"
       data-bs-toggle="offcanvas"
       data-bs-target="#offcanvasExample"
@@ -98,6 +98,18 @@ const Button = ({ children }) => {
     >
       {children}
     </button>
+  );
+};
+const Icon = () => {
+  return (
+    <div className="fs-5 flip-card-inner">
+      <div className="flip-card-front d-flex justify-content-center align-items-center">
+        <i className="fa-solid fa-arrow-left"></i>
+      </div>
+      <div className="flip-card-back d-flex justify-content-center align-items-center">
+        <i className="fa-solid fa-arrow-right"></i>
+      </div>
+    </div>
   );
 };
 const Header = () => {
@@ -204,15 +216,8 @@ export const Sidebar = () => {
         <div className="position-relative d-flex flex-column h-100">
           <div className="position-absolute end-0 top-50 transform-align-center-justify-end visible">
             <Button>
-              <div className={"fs-5 flip-card" + (direction ? " flip" : "")}>
-                <div className="flip-card-inner">
-                  <div className="flip-card-front d-flex justify-content-center align-items-center">
-                    <i className="fa-solid fa-arrow-left"></i>
-                  </div>
-                  <div className="flip-card-back d-flex justify-content-center align-items-center">
-                    <i className="fa-solid fa-arrow-right"></i>
-                  </div>
-                </div>
+              <div className={"flip-card" + (direction ? " flip" : "")}>
+                <Icon />
               </div>
             </Button>
           </div>
