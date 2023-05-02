@@ -11,6 +11,9 @@
       format("woff");
 }
 body {
+  overflow-y: scroll;
+}
+body {
   background-color: var(--body-color);
   font-family: "Questrial", sans-serif;
   text-rendering: optimizeLegibility;
@@ -268,7 +271,8 @@ body {
       format("truetype");
 }
 .content-shadow {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.24), 0px 1px 4px 0px rgba(0, 0, 0, 0.22);
 }
 @media (min-width: 576px) {
   .fs-sm-6 {
@@ -295,4 +299,7 @@ body {
   --bs-btn-disabled-color: #000000;
   --bs-btn-disabled-bg: #ffffff;
   --bs-btn-disabled-border-color: #ffffff;
+}
+.maximize-btn:focus-visible {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 }
