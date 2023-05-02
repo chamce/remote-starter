@@ -1,8 +1,11 @@
 export const Content = ({ children }) => {
   return (
     <div
-      className="col-12 col-xxl-10 offset-xxl-1 content-shadow bg-white border position-relative"
-      style={{ paddingBottom: 12, paddingTop: 12 }}
+      className="col-12 col-xxl-10 offset-xxl-1 bg-white content-shadow border position-relative"
+      style={{
+        paddingBottom: 12,
+        paddingTop: 12,
+      }}
     >
       {/* <button
         type="button"
@@ -12,9 +15,7 @@ export const Content = ({ children }) => {
       >
         <i className="fa-solid fa-up-right-and-down-left-from-center d-flex fs-4" />
       </button> */}
-      <div className="mx-2 mx-md-3 mx-lg-4 mx-xxl-5 my-5">
-        {children}
-      </div>
+      <div className="mx-2 mx-md-3 mx-lg-4 mx-xxl-5 my-5">{children}</div>
       {/* <div
         className="modal fade"
         id="fullscreenDashboard"

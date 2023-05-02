@@ -90,7 +90,7 @@ const Button = ({ children }) => {
   return (
     <button
       style={{ marginLeft: "12px" }}
-      className="btn-eastern btn btn-gradient ms-sm-3 rounded-circle offcanvas-btn opacity-xs-25"
+      className="glass btn-eastern btn ms-sm-3 rounded-circle offcanvas-btn opacity-xs-25"
       type="button"
       data-bs-toggle="offcanvas"
       data-bs-target="#offcanvasExample"
@@ -204,13 +204,16 @@ export const Sidebar = () => {
         <div className="position-relative d-flex flex-column h-100">
           <div className="position-absolute end-0 top-50 transform-align-center-justify-end visible">
             <Button>
-              <div className={"flip-card" + (direction ? " flip" : "")}>
+              <div
+                style={{ fontSize: "1.125em" }}
+                className={"flip-card" + (direction ? " flip" : "")}
+              >
                 <div className="flip-card-inner">
                   <div className="flip-card-front d-flex justify-content-center align-items-center">
-                    <i className="fa-solid fa-angles-left fa-lg"></i>
+                    <i className="fa-solid fa-arrow-left fa-lg"></i>
                   </div>
                   <div className="flip-card-back d-flex justify-content-center align-items-center">
-                    <i className="fa-solid fa-angles-right fa-lg"></i>
+                    <i className="fa-solid fa-arrow-right fa-lg"></i>
                   </div>
                 </div>
               </div>
