@@ -1,5 +1,5 @@
 import * as portals from "react-reverse-portal";
-import { useMemo, useState, useCallback, useRef, useLayoutEffect } from "react";
+import { useMemo, useState, useCallback, useRef } from "react";
 import { useEventListener } from "../hooks/useEventListener";
 
 const Container = ({ children, length = 10 }) => {
@@ -69,57 +69,54 @@ const Main = ({ children }) => {
   return <div className="mx-2 mx-md-3 mx-lg-4 mx-xxl-5 my-5">{children}</div>;
 };
 
-const resetScrollersByClassName = (
-  classNames,
-  childrenRef,
-  beforeStateUpdate
-) => {
-  classNames.forEach((className) => {
-    const scrollerCollection =
-      childrenRef.current.getElementsByClassName(className);
-    for (let i = 0; i < scrollerCollection.length; i++) {
-      const scroller = scrollerCollection[i];
-      if (beforeStateUpdate) {
-        scroller.style.pointerEvents = "none";
-        scroller.scrollTop = 0;
-      } else {
-        scroller.style.pointerEvents = "auto";
-      }
-    }
-  });
-};
+// const resetScrollersByClassName = (
+//   classNames,
+//   childrenRef,
+//   beforeStateUpdate
+// ) => {
+//   classNames.forEach((className) => {
+//     const scrollerCollection =
+//       childrenRef.current.getElementsByClassName(className);
+//     for (let i = 0; i < scrollerCollection.length; i++) {
+//       const scroller = scrollerCollection[i];
+//       if (beforeStateUpdate) {
+//         scroller.style.pointerEvents = "none";
+//         scroller.scrollTop = 0;
+//       } else {
+//         scroller.style.pointerEvents = "auto";
+//       }
+//     }
+//   });
+// };
 const useFullscreenEvents = (childrenRef, scrollersRef, fullscreenModalId) => {
   const [eventStack, setEventStack] = useState([]);
 
-  useLayoutEffect(() => {
-    const beforeStateUpdate = false;
-    resetScrollersByClassName(
-      Object.keys(scrollersRef.current.classNames),
-      childrenRef,
-      beforeStateUpdate
-    );
-  }, [eventStack, childrenRef, scrollersRef]);
+  // useLayoutEffect(() => {
+  //   const beforeStateUpdate = false;
+  //   resetScrollersByClassName(
+  //     Object.keys(scrollersRef.current.classNames),
+  //     childrenRef,
+  //     beforeStateUpdate
+  //   );
+  // }, [eventStack, childrenRef, scrollersRef]);
 
-  const updateEventStack = useCallback(
-    (e) => {
-      const beforeStateUpdate = true;
-      resetScrollersByClassName(
-        Object.keys(scrollersRef.current.classNames),
-        childrenRef,
-        beforeStateUpdate
-      );
-      const nextEvent = { type: e.type.split(".")[0], id: e.target.id };
-      setEventStack((stack) => {
-        const previousEvent = stack[stack.length - 1];
-        if (previousEvent?.type === "hide" && nextEvent.type === "hidden") {
-          return [];
-        } else {
-          return [...stack, nextEvent];
-        }
-      });
-    },
-    [childrenRef, scrollersRef]
-  );
+  const updateEventStack = useCallback((e) => {
+    // const beforeStateUpdate = true;
+    // resetScrollersByClassName(
+    //   Object.keys(scrollersRef.current.classNames),
+    //   childrenRef,
+    //   beforeStateUpdate
+    // );
+    const nextEvent = { type: e.type.split(".")[0], id: e.target.id };
+    setEventStack((stack) => {
+      const previousEvent = stack[stack.length - 1];
+      if (previousEvent?.type === "hide" && nextEvent.type === "hidden") {
+        return [];
+      } else {
+        return [...stack, nextEvent];
+      }
+    });
+  }, []);
 
   useEventListener("show.bs.modal", updateEventStack);
   useEventListener("hide.bs.modal", updateEventStack);
@@ -134,24 +131,24 @@ const useFullscreenEvents = (childrenRef, scrollersRef, fullscreenModalId) => {
 };
 
 export const Content = ({ children }) => {
-  // const portalNode = useMemo(() => portals.createHtmlPortalNode(), []);
-  // const childrenRef = useRef();
-  // const scrollersRef = useRef({
-  //   classNames: {},
-  // });
-  // const captureScroller = useCallback((e) => {
-  //   scrollersRef.current.classNames[e.target.className] = true;
-  // }, []);
-  // const fullscreenModalId = "fullscreenWindow";
-  // const fullscreenShown = useFullscreenEvents(
-  //   childrenRef,
-  //   scrollersRef,
-  //   fullscreenModalId
-  // );
+  const portalNode = useMemo(() => portals.createHtmlPortalNode(), []);
+  const childrenRef = useRef();
+  const scrollersRef = useRef({
+    classNames: {},
+  });
+  const captureScroller = useCallback((e) => {
+    scrollersRef.current.classNames[e.target.className] = true;
+  }, []);
+  const fullscreenModalId = "fullscreenWindow";
+  const fullscreenShown = useFullscreenEvents(
+    childrenRef,
+    scrollersRef,
+    fullscreenModalId
+  );
 
   return (
     <Container>
-      {/* <portals.InPortal node={portalNode}>
+      <portals.InPortal node={portalNode}>
         <div ref={childrenRef} onScrollCapture={captureScroller}>
           {children}
         </div>
@@ -159,8 +156,7 @@ export const Content = ({ children }) => {
       <Fullscreen modalId={fullscreenModalId}>
         {fullscreenShown && <portals.OutPortal node={portalNode} />}
       </Fullscreen>
-      <Main>{!fullscreenShown && <portals.OutPortal node={portalNode} />}</Main> */}
-      <Main>{children}</Main>
+      <Main>{!fullscreenShown && <portals.OutPortal node={portalNode} />}</Main>
     </Container>
   );
 };
