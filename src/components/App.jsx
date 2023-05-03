@@ -1,5 +1,5 @@
 import "../styles/App.css";
-import { Wrapper } from "../remote/components/Wrapper";
+import { Wrapper } from "./Wrapper";
 
 export const App = () => {
   return (

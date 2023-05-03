@@ -1,9 +1,10 @@
 import * as React from "react";
+import ReactDOM from "react-dom/client";
 import {
   createRemoteComponent,
   createRequires,
 } from "@paciolan/remote-component";
 
-const requires = createRequires({ react: React });
-
-export const RemoteComponent = createRemoteComponent({ requires });
+export const RemoteComponent = createRemoteComponent({
+  requires: createRequires({ react: React, "react-dom": ReactDOM }),
+});

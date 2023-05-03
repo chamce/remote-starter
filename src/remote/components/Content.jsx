@@ -1,4 +1,4 @@
-// import * as portals from "react-reverse-portal";
+import * as portals from "react-reverse-portal";
 import { useMemo, useState, useCallback, useRef, useLayoutEffect } from "react";
 import { useEventListener } from "../hooks/useEventListener";
 
