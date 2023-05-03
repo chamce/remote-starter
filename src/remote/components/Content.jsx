@@ -134,24 +134,24 @@ const useFullscreenEvents = (childrenRef, scrollersRef, fullscreenModalId) => {
 };
 
 export const Content = ({ children }) => {
-  const portalNode = useMemo(() => portals.createHtmlPortalNode(), []);
-  const childrenRef = useRef();
-  const scrollersRef = useRef({
-    classNames: {},
-  });
-  const captureScroller = useCallback((e) => {
-    scrollersRef.current.classNames[e.target.className] = true;
-  }, []);
-  const fullscreenModalId = "fullscreenWindow";
-  const fullscreenShown = useFullscreenEvents(
-    childrenRef,
-    scrollersRef,
-    fullscreenModalId
-  );
+  // const portalNode = useMemo(() => portals.createHtmlPortalNode(), []);
+  // const childrenRef = useRef();
+  // const scrollersRef = useRef({
+  //   classNames: {},
+  // });
+  // const captureScroller = useCallback((e) => {
+  //   scrollersRef.current.classNames[e.target.className] = true;
+  // }, []);
+  // const fullscreenModalId = "fullscreenWindow";
+  // const fullscreenShown = useFullscreenEvents(
+  //   childrenRef,
+  //   scrollersRef,
+  //   fullscreenModalId
+  // );
 
   return (
     <Container>
-      <portals.InPortal node={portalNode}>
+      {/* <portals.InPortal node={portalNode}>
         <div ref={childrenRef} onScrollCapture={captureScroller}>
           {children}
         </div>
@@ -159,7 +159,8 @@ export const Content = ({ children }) => {
       <Fullscreen modalId={fullscreenModalId}>
         {fullscreenShown && <portals.OutPortal node={portalNode} />}
       </Fullscreen>
-      <Main>{!fullscreenShown && <portals.OutPortal node={portalNode} />}</Main>
+      <Main>{!fullscreenShown && <portals.OutPortal node={portalNode} />}</Main> */}
+      <Main>{children}</Main>
     </Container>
   );
 };
