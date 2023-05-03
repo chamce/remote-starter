@@ -6,5 +6,5 @@ import {
 } from "@paciolan/remote-component";
 
 export const RemoteComponent = createRemoteComponent({
-  requires: createRequires({ react: React, "react-dom": ReactDOM }),
+  requires: createRequires({ react: React }),
 });
