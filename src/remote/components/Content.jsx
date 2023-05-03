@@ -26,13 +26,13 @@ const Container = ({ children, length = 10 }) => {
     </div>
   );
 };
-const Modal = ({ children, name }) => {
+const Fullscreen = ({ children, modalId }) => {
   return (
     <>
       <button
         type="button"
         data-bs-toggle="modal"
-        data-bs-target={"#" + name}
+        data-bs-target={"#" + modalId}
         className="btn maximize-btn btn-white square-button rounded-0 border-0 position-absolute top-0 end-0"
       >
         Fullscreen
@@ -40,15 +40,15 @@ const Modal = ({ children, name }) => {
       </button>
       <div
         className="modal fade"
-        id={name}
+        id={modalId}
         tabIndex={-1}
-        aria-labelledby={name + "Label"}
+        aria-labelledby={modalId + "Label"}
         aria-hidden="true"
       >
         <div className="modal-dialog modal-fullscreen">
           <div className="modal-content">
             <div className="modal-header">
-              <h1 className="modal-title fs-5" id={name + "Label"}>
+              <h1 className="modal-title fs-5" id={modalId + "Label"}>
                 Eastern Kentucky University
               </h1>
               <button
@@ -65,13 +65,21 @@ const Modal = ({ children, name }) => {
     </>
   );
 };
+const Main = ({ children }) => {
+  return <div className="mx-2 mx-md-3 mx-lg-4 mx-xxl-5 my-5">{children}</div>;
+};
 
-const resetScrollersByClassName = (ref, classNames, beforeOpening) => {
+const resetScrollersByClassName = (
+  classNames,
+  childrenRef,
+  beforeStateUpdate
+) => {
   classNames.forEach((className) => {
-    const scrollerCollection = ref.current.getElementsByClassName(className);
+    const scrollerCollection =
+      childrenRef.current.getElementsByClassName(className);
     for (let i = 0; i < scrollerCollection.length; i++) {
       const scroller = scrollerCollection[i];
-      if (beforeOpening) {
+      if (beforeStateUpdate) {
         scroller.style.pointerEvents = "none";
         scroller.scrollTop = 0;
       } else {
@@ -80,77 +88,78 @@ const resetScrollersByClassName = (ref, classNames, beforeOpening) => {
     }
   });
 };
-const useModalEvents = (name) => {
-  const node = useMemo(() => portals.createHtmlPortalNode(), []);
-
-  const scrollersRef = useRef({
-    classNames: {},
-  });
-  const handleScrollCapture = useCallback(
-    (e) => {
-      scrollersRef.current.classNames[e.target.className] = true;
-    },
-    [scrollersRef]
-  );
-
-  const ref = useRef();
+const useFullscreenEvents = (childrenRef, scrollersRef, fullscreenModalId) => {
   const [eventStack, setEventStack] = useState([]);
 
-  // maybe should only reset scrollers on before hide, and after shown
   useLayoutEffect(() => {
-    const beforeOpening = false;
-    const classNames = Object.keys(scrollersRef.current.classNames);
-    resetScrollersByClassName(ref, classNames, beforeOpening);
-  }, [eventStack]);
+    const beforeStateUpdate = false;
+    resetScrollersByClassName(
+      Object.keys(scrollersRef.current.classNames),
+      childrenRef,
+      beforeStateUpdate
+    );
+  }, [eventStack, childrenRef, scrollersRef]);
 
-  const handleEventOccured = useCallback((e) => {
-    const beforeOpening = true;
-    const classNames = Object.keys(scrollersRef.current.classNames);
-    resetScrollersByClassName(ref, classNames, beforeOpening);
-    const nextEvent = { type: e.type.split(".")[0], target: e.target.id };
-    setEventStack((stack) => {
-      const previousEvent = stack[stack.length - 1];
-      if (previousEvent?.type === "hide" && nextEvent.type === "hidden") {
-        return [];
-      } else {
-        return [...stack, nextEvent];
-      }
-    });
-  }, []);
-
-  useEventListener("show.bs.modal", handleEventOccured);
-  useEventListener("hide.bs.modal", handleEventOccured);
-  useEventListener("shown.bs.modal", handleEventOccured);
-  useEventListener("hidden.bs.modal", handleEventOccured);
-
-  const modalShown = useMemo(
-    () =>
-      eventStack[eventStack.length - 1]?.type === "shown" &&
-      eventStack[eventStack.length - 1]?.target === name,
-    [eventStack, name]
+  const updateEventStack = useCallback(
+    (e) => {
+      const beforeStateUpdate = true;
+      resetScrollersByClassName(
+        Object.keys(scrollersRef.current.classNames),
+        childrenRef,
+        beforeStateUpdate
+      );
+      const nextEvent = { type: e.type.split(".")[0], id: e.target.id };
+      setEventStack((stack) => {
+        const previousEvent = stack[stack.length - 1];
+        if (previousEvent?.type === "hide" && nextEvent.type === "hidden") {
+          return [];
+        } else {
+          return [...stack, nextEvent];
+        }
+      });
+    },
+    [childrenRef, scrollersRef]
   );
 
-  return [node, ref, handleScrollCapture, modalShown];
+  useEventListener("show.bs.modal", updateEventStack);
+  useEventListener("hide.bs.modal", updateEventStack);
+  useEventListener("shown.bs.modal", updateEventStack);
+  useEventListener("hidden.bs.modal", updateEventStack);
+
+  const fullscreenShown =
+    eventStack[eventStack.length - 1]?.type === "shown" &&
+    eventStack[eventStack.length - 1]?.id === fullscreenModalId;
+
+  return fullscreenShown;
 };
 
 export const Content = ({ children }) => {
-  const modalName = "fullscreenWindow";
-  const [node, ref, handleScrollCapture, modalShown] =
-    useModalEvents(modalName);
+  const portalNode = useMemo(() => portals.createHtmlPortalNode(), []);
+  const childrenRef = useRef();
+  const scrollersRef = useRef({
+    classNames: {},
+  });
+  const captureScroller = useCallback((e) => {
+    scrollersRef.current.classNames[e.target.className] = true;
+  }, []);
+  const fullscreenModalId = "fullscreenWindow";
+  const fullscreenShown = useFullscreenEvents(
+    childrenRef,
+    scrollersRef,
+    fullscreenModalId
+  );
 
   return (
     <Container>
-      <portals.InPortal node={node}>
-        <div ref={ref} onScrollCapture={handleScrollCapture}>
+      <portals.InPortal node={portalNode}>
+        <div ref={childrenRef} onScrollCapture={captureScroller}>
           {children}
         </div>
       </portals.InPortal>
-      <div className="mx-2 mx-md-3 mx-lg-4 mx-xxl-5 my-5">
-        {!modalShown && <portals.OutPortal node={node} />}
-      </div>
-      <Modal name={modalName}>
-        {modalShown && <portals.OutPortal node={node} />}
-      </Modal>
+      <Fullscreen modalId={fullscreenModalId}>
+        {fullscreenShown && <portals.OutPortal node={portalNode} />}
+      </Fullscreen>
+      <Main>{!fullscreenShown && <portals.OutPortal node={portalNode} />}</Main>
     </Container>
   );
 };

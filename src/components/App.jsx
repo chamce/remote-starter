@@ -4,7 +4,7 @@ import { Wrapper } from "../remote/components/Wrapper";
 export const App = () => {
   return (
     <Wrapper>
-      <div className="accordion" id="accordionExample">
+      {/* <div className="accordion" id="accordionExample">
         <div className="accordion-item">
           <h2 className="accordion-header">
             <button
@@ -95,10 +95,10 @@ export const App = () => {
             </div>
           </div>
         </div>
-      </div>
-      {/* <div className="border border-success overflow-auto" style={{ height: 500 }}>
-        <div className="bg-primary" style={{ height: 3000 }}></div>
       </div> */}
+      <div className="border border-success overflow-auto" style={{ height: 500 }}>
+        <div className="bg-primary" style={{ height: 3000 }}></div>
+      </div>
     </Wrapper>
   );
 };
