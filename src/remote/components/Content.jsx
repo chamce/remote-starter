@@ -1,5 +1,5 @@
 import * as portals from "react-reverse-portal";
-import { useMemo, useState, useCallback, useRef } from "react";
+import { useMemo, useState, useCallback, useRef, useLayoutEffect } from "react";
 import { useEventListener } from "../hooks/useEventListener";
 
 const Container = ({ children, length = 10 }) => {
@@ -69,54 +69,57 @@ const Main = ({ children }) => {
   return <div className="mx-2 mx-md-3 mx-lg-4 mx-xxl-5 my-5">{children}</div>;
 };
 
-// const resetScrollersByClassName = (
-//   classNames,
-//   childrenRef,
-//   beforeStateUpdate
-// ) => {
-//   classNames.forEach((className) => {
-//     const scrollerCollection =
-//       childrenRef.current.getElementsByClassName(className);
-//     for (let i = 0; i < scrollerCollection.length; i++) {
-//       const scroller = scrollerCollection[i];
-//       if (beforeStateUpdate) {
-//         scroller.style.pointerEvents = "none";
-//         scroller.scrollTop = 0;
-//       } else {
-//         scroller.style.pointerEvents = "auto";
-//       }
-//     }
-//   });
-// };
+const resetScrollersByClassName = (classNames, childrenRef, transitioning) => {
+  classNames.forEach((className) => {
+    const scrollerCollection =
+      childrenRef.current.getElementsByClassName(className);
+    for (let i = 0; i < scrollerCollection.length; i++) {
+      const scroller = scrollerCollection[i];
+      if (transitioning) {
+        scroller.style.pointerEvents = "none";
+        scroller.scrollTop = 0;
+      } else {
+        scroller.style.pointerEvents = "auto";
+      }
+    }
+  });
+};
 const useFullscreenEvents = (childrenRef, scrollersRef, fullscreenModalId) => {
   const [eventStack, setEventStack] = useState([]);
 
-  // useLayoutEffect(() => {
-  //   const beforeStateUpdate = false;
-  //   resetScrollersByClassName(
-  //     Object.keys(scrollersRef.current.classNames),
-  //     childrenRef,
-  //     beforeStateUpdate
-  //   );
-  // }, [eventStack, childrenRef, scrollersRef]);
+  useLayoutEffect(() => {
+    const lastEvent = eventStack[eventStack.length - 1];
+    const shownOrHidden =
+      lastEvent?.type === "shown" || lastEvent?.type === undefined;
+    if (shownOrHidden) {
+      const classNames = Object.keys(scrollersRef.current.classNames);
+      const transitioning = false;
+      resetScrollersByClassName(classNames, childrenRef, transitioning);
+    }
+  }, [eventStack, childrenRef, scrollersRef]);
 
-  const updateEventStack = useCallback((e) => {
-    // const beforeStateUpdate = true;
-    // resetScrollersByClassName(
-    //   Object.keys(scrollersRef.current.classNames),
-    //   childrenRef,
-    //   beforeStateUpdate
-    // );
-    const nextEvent = { type: e.type.split(".")[0], id: e.target.id };
-    setEventStack((stack) => {
-      const previousEvent = stack[stack.length - 1];
-      if (previousEvent?.type === "hide" && nextEvent.type === "hidden") {
-        return [];
-      } else {
-        return [...stack, nextEvent];
+  const updateEventStack = useCallback(
+    (e) => {
+      const nextEvent = { type: e.type.split(".")[0], id: e.target.id };
+      const showOrHide =
+        nextEvent.id === fullscreenModalId &&
+        (nextEvent.type === "show" || nextEvent.type === "hide");
+      if (showOrHide) {
+        const classNames = Object.keys(scrollersRef.current.classNames);
+        const transitioning = true;
+        resetScrollersByClassName(classNames, childrenRef, transitioning);
       }
-    });
-  }, []);
+      setEventStack((stack) => {
+        const previousEvent = stack[stack.length - 1];
+        if (previousEvent?.type === "hide" && nextEvent.type === "hidden") {
+          return [];
+        } else {
+          return [...stack, nextEvent];
+        }
+      });
+    },
+    [childrenRef, scrollersRef, fullscreenModalId]
+  );
 
   useEventListener("show.bs.modal", updateEventStack);
   useEventListener("hide.bs.modal", updateEventStack);
