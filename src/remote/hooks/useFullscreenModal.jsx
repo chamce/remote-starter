@@ -63,7 +63,7 @@ export const useFullscreenModal = (children, fullscreenModalId) => {
     return false;
   }, [eventStack, fullscreenModalId]);
 
-  const modalHeaderButton = useMemo(() => {
+  const dynamicModalButton = useMemo(() => {
     const anyModalShown = eventStack[eventStack.length - 1]?.type === "shown";
     if (anyModalShown && shouldShowBackButton) {
       return (
@@ -89,8 +89,8 @@ export const useFullscreenModal = (children, fullscreenModalId) => {
   }, [eventStack, shouldShowBackButton, fullscreenModalId]);
 
   const childrenWithModalButton = useMemo(
-    () => cloneElement(children, { modalHeaderButton }),
-    [children, modalHeaderButton]
+    () => cloneElement(children, { dynamicModalButton }),
+    [children, dynamicModalButton]
   );
 
   useLayoutEffect(() => {

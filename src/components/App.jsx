@@ -143,7 +143,7 @@ const Accordion = () => {
     </div>
   );
 };
-const Modals = ({ headerButton }) => {
+const Modals = ({ dynamicModalButton }) => {
   return (
     <>
       <div
@@ -159,7 +159,7 @@ const Modals = ({ headerButton }) => {
               <h1 className="modal-title fs-5" id="exampleModalToggleLabel">
                 Modal 1
               </h1>
-              {headerButton}
+              {dynamicModalButton}
             </div>
             <div className="modal-body">
               Show a second modal and hide this one with the button below.
@@ -189,7 +189,7 @@ const Modals = ({ headerButton }) => {
               <h1 className="modal-title fs-5" id="exampleModalToggleLabel2">
                 Modal 2
               </h1>
-              {headerButton}
+              {dynamicModalButton}
             </div>
             <div className="modal-body">
               Hide this modal and show the first with the button below.
@@ -217,7 +217,7 @@ const Modals = ({ headerButton }) => {
   );
 };
 
-export const App = ({ modalHeaderButton }) => {
+export const App = ({ dynamicModalButton }) => {
   return (
     <>
       {/* <div className="vstack gap-4">
@@ -228,7 +228,7 @@ export const App = ({ modalHeaderButton }) => {
           }
         />
         <Accordion />
-        <Modals headerButton={modalHeaderButton} />
+        <Modals dynamicModalButton={dynamicModalButton} />
       </div> */}
     </>
   );
