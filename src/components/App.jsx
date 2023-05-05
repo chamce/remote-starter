@@ -220,7 +220,7 @@ const Modals = ({ dynamicModalButton }) => {
 export const App = ({ dynamicModalButton }) => {
   return (
     <>
-      {/* <div className="vstack gap-4">
+      <div className="vstack gap-4">
         <TitleCard
           title={"Title"}
           description={
@@ -229,7 +229,7 @@ export const App = ({ dynamicModalButton }) => {
         />
         <Accordion />
         <Modals dynamicModalButton={dynamicModalButton} />
-      </div> */}
+      </div>
     </>
   );
 };

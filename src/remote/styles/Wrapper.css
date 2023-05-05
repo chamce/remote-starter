@@ -9,20 +9,20 @@
   src: local("Avenir"),
     url(https://fonts.cdnfonts.com/s/71748/avenir_roman_12.woff) format("woff");
 }
-/* @font-face {
+@font-face {
   font-family: questrial;
   font-style: normal;
   font-weight: 400;
   src: local("Questrial"),
     url(https://fonts.cdnfonts.com/s/12556/Questrial-Regular.woff)
       format("woff");
-} */
+}
 body {
   overflow-y: scroll;
 }
 body {
   background-color: var(--body-color);
-  font-family: "Avenir", sans-serif;
+  font-family: "Questrial", sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -30,20 +30,20 @@ See https://stackoverflow.com/q/20007992 for more info`),p.insertRule(this._dele
   src: local("Avenir"),\r
     url(https://fonts.cdnfonts.com/s/71748/avenir_roman_12.woff) format("woff");\r
 }\r
-/* @font-face {\r
+@font-face {\r
   font-family: questrial;\r
   font-style: normal;\r
   font-weight: 400;\r
   src: local("Questrial"),\r
     url(https://fonts.cdnfonts.com/s/12556/Questrial-Regular.woff)\r
       format("woff");\r
-} */\r
+}\r
 body {\r
   overflow-y: scroll;\r
 }\r
 body {\r
   background-color: var(--body-color);\r
-  font-family: "Avenir", sans-serif;\r
+  font-family: "Questrial", sans-serif;\r
   text-rendering: optimizeLegibility;\r
   -webkit-font-smoothing: antialiased;\r
   -moz-osx-font-smoothing: grayscale;\r
