@@ -1,5 +1,4 @@
 import "../styles/App.css";
-import { Wrapper } from "../remote/components/Wrapper";
 // import { AgGridReact } from "ag-grid-react"; // the AG Grid React Component
 // import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
 // import "ag-grid-community/styles/ag-theme-alpine.css"; // Optional theme CSS
@@ -27,64 +26,118 @@ import { Wrapper } from "../remote/components/Wrapper";
 //     </div>
 //   );
 // };
-const Modal = () => {
+// const Modals = ({ headerButton }) => {
+//   return (
+//     <>
+//       <div
+//         className="modal fade"
+//         id="exampleModalToggle"
+//         aria-hidden="true"
+//         aria-labelledby="exampleModalToggleLabel"
+//         tabIndex={-1}
+//       >
+//         <div className="modal-dialog modal-dialog-centered">
+//           <div className="modal-content">
+//             <div className="modal-header">
+//               <h1 className="modal-title fs-5" id="exampleModalToggleLabel">
+//                 Modal 1
+//               </h1>
+//               {headerButton}
+//             </div>
+//             <div className="modal-body">
+//               Show a second modal and hide this one with the button below.
+//             </div>
+//             <div className="modal-footer">
+//               <button
+//                 className="btn btn-primary"
+//                 data-bs-target="#exampleModalToggle2"
+//                 data-bs-toggle="modal"
+//               >
+//                 Open second modal
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//       <div
+//         className="modal fade"
+//         id="exampleModalToggle2"
+//         aria-hidden="true"
+//         aria-labelledby="exampleModalToggleLabel2"
+//         tabIndex={-1}
+//       >
+//         <div className="modal-dialog modal-dialog-centered">
+//           <div className="modal-content">
+//             <div className="modal-header">
+//               <h1 className="modal-title fs-5" id="exampleModalToggleLabel2">
+//                 Modal 2
+//               </h1>
+//               {headerButton}
+//             </div>
+//             <div className="modal-body">
+//               Hide this modal and show the first with the button below.
+//             </div>
+//             <div className="modal-footer">
+//               <button
+//                 className="btn btn-primary"
+//                 data-bs-target="#exampleModalToggle"
+//                 data-bs-toggle="modal"
+//               >
+//                 Back to first
+//               </button>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//       <button
+//         className="btn btn-primary"
+//         data-bs-target="#exampleModalToggle"
+//         data-bs-toggle="modal"
+//       >
+//         Open first modal
+//       </button>
+//     </>
+//   );
+// };
+const TitleCard = ({ title, description }) => {
+  return (
+    <div className="card card-shadow bg-gradient bg-dark-subtle">
+      <div className="card-body">
+        <h5 className="card-title display-4">{title}</h5>
+        <p className="card-text fs-4">{description}</p>
+        <input
+          className="form-control body-search fs-5"
+          placeholder="Filter"
+          aria-label="Search"
+          type="search"
+          defaultValue=""
+        />
+      </div>
+    </div>
+  );
+};
+
+export const App = ({ modalHeaderButton }) => {
   return (
     <>
-      {/* Button trigger modal */}
-      <button
-        type="button"
-        className="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
-      >
-        Launch demo modal
-      </button>
-      {/* Modal */}
-      <div
-        className="modal fade"
-        id="exampleModal"
-        tabIndex={-1}
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">
-                Modal title
-              </h1>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              />
-            </div>
-            <div className="modal-body">...</div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="button" className="btn btn-primary">
-                Save changes
-              </button>
-            </div>
-          </div>
-        </div>
+      <div className="vstack gap-4">
+        <TitleCard
+          title={"Title"}
+          description={
+            "Some quick example text to build on the card title and make up the bulk of the card's content."
+          }
+        />
+        {/* <Table />
+        <Modals headerButton={modalHeaderButton} /> */}
       </div>
     </>
   );
 };
 
-export const App = () => {
-  return (
-    <Wrapper>
-      {/* <Table /> */}
-      <Modal />
-    </Wrapper>
-  );
-};
+/*
+- remove ag grid
+- do we want to make scroll reset cleaner--opacity 0 during transition?
+- look for better fullscreen icon
+- write usage document
+- should the wrapper include the title block, and how would you include it?
+*/

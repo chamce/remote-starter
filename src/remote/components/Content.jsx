@@ -1,6 +1,5 @@
-import * as portals from "react-reverse-portal";
-import { useMemo, useState, useCallback, useRef, useLayoutEffect } from "react";
-import { useEventListener } from "../hooks/useEventListener";
+import { InPortal, OutPortal } from "react-reverse-portal";
+import { useFullscreenModal } from "../hooks/useFullscreenModal";
 
 const Container = ({ children, length = 10 }) => {
   const columnClassName =
@@ -26,18 +25,12 @@ const Container = ({ children, length = 10 }) => {
     </div>
   );
 };
+const Main = ({ children }) => {
+  return <div className="mx-2 mx-md-3 mx-lg-4 mx-xxl-5 my-5">{children}</div>;
+};
 const Fullscreen = ({ children, modalId }) => {
   return (
     <>
-      <button
-        type="button"
-        data-bs-toggle="modal"
-        data-bs-target={"#" + modalId}
-        className="btn maximize-btn btn-white square-button rounded-0 border-0 position-absolute top-0 end-0"
-      >
-        Fullscreen
-        {/* <i className="fa-solid fa-up-right-and-down-left-from-center d-flex fs-4" /> */}
-      </button>
       <div
         className="modal fade"
         id={modalId}
@@ -65,101 +58,27 @@ const Fullscreen = ({ children, modalId }) => {
     </>
   );
 };
-const Main = ({ children }) => {
-  return <div className="mx-2 mx-md-3 mx-lg-4 mx-xxl-5 my-5">{children}</div>;
-};
 
-const resetScrollersByClassName = (classNames, childrenRef, transitioning) => {
-  classNames.forEach((className) => {
-    const scrollerCollection =
-      childrenRef.current.getElementsByClassName(className);
-    for (let i = 0; i < scrollerCollection.length; i++) {
-      const scroller = scrollerCollection[i];
-      if (transitioning) {
-        scroller.style.pointerEvents = "none";
-        scroller.scrollTop = 0;
-      } else {
-        scroller.style.pointerEvents = "auto";
-      }
-    }
-  });
-};
-const useFullscreenEvents = (childrenRef, scrollersRef, fullscreenModalId) => {
-  const [eventStack, setEventStack] = useState([]);
-
-  useLayoutEffect(() => {
-    const lastEvent = eventStack[eventStack.length - 1];
-    const shownOrHidden =
-      lastEvent?.type === "shown" || lastEvent?.type === undefined;
-    if (shownOrHidden) {
-      const classNames = Object.keys(scrollersRef.current.classNames);
-      const transitioning = false;
-      resetScrollersByClassName(classNames, childrenRef, transitioning);
-    }
-  }, [eventStack, childrenRef, scrollersRef]);
-
-  const updateEventStack = useCallback(
-    (e) => {
-      const nextEvent = { type: e.type.split(".")[0], id: e.target.id };
-      const showOrHide =
-        nextEvent.id === fullscreenModalId &&
-        (nextEvent.type === "show" || nextEvent.type === "hide");
-      if (showOrHide) {
-        const classNames = Object.keys(scrollersRef.current.classNames);
-        const transitioning = true;
-        resetScrollersByClassName(classNames, childrenRef, transitioning);
-      }
-      setEventStack((stack) => {
-        const previousEvent = stack[stack.length - 1];
-        if (previousEvent?.type === "hide" && nextEvent.type === "hidden") {
-          return [];
-        } else {
-          return [...stack, nextEvent];
-        }
-      });
-    },
-    [childrenRef, scrollersRef, fullscreenModalId]
-  );
-
-  useEventListener("show.bs.modal", updateEventStack);
-  useEventListener("hide.bs.modal", updateEventStack);
-  useEventListener("shown.bs.modal", updateEventStack);
-  useEventListener("hidden.bs.modal", updateEventStack);
-
-  const fullscreenShown =
-    eventStack[eventStack.length - 1]?.type === "shown" &&
-    eventStack[eventStack.length - 1]?.id === fullscreenModalId;
-
-  return fullscreenShown;
-};
-
-export const Content = ({ children }) => {
-  const portalNode = useMemo(() => portals.createHtmlPortalNode(), []);
-  const childrenRef = useRef();
-  const scrollersRef = useRef({
-    classNames: {},
-  });
-  const captureScroller = useCallback((e) => {
-    scrollersRef.current.classNames[e.target.className] = true;
-  }, []);
-  const fullscreenModalId = "fullscreenWindow";
-  const fullscreenShown = useFullscreenEvents(
+export const Content = ({ children, fullscreenModalId }) => {
+  const {
+    portalNode,
     childrenRef,
-    scrollersRef,
-    fullscreenModalId
-  );
+    captureScroller,
+    childrenWithModalButton,
+    fullscreenShown,
+  } = useFullscreenModal(children, fullscreenModalId);
 
   return (
     <Container>
-      <portals.InPortal node={portalNode}>
+      <InPortal node={portalNode}>
         <div ref={childrenRef} onScrollCapture={captureScroller}>
-          {children}
+          {childrenWithModalButton}
         </div>
-      </portals.InPortal>
+      </InPortal>
+      <Main>{!fullscreenShown && <OutPortal node={portalNode} />}</Main>
       <Fullscreen modalId={fullscreenModalId}>
-        {fullscreenShown && <portals.OutPortal node={portalNode} />}
+        {fullscreenShown && <OutPortal node={portalNode} />}
       </Fullscreen>
-      <Main>{!fullscreenShown && <portals.OutPortal node={portalNode} />}</Main>
     </Container>
   );
 };

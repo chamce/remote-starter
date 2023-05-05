@@ -21,7 +21,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-/*! CSS Used from: https://www.irserver2.eku.edu/Reports/DataPage/assets/index-d4e0eb73.css */
 .form-control.header-search {
   color: #fff;
   background-color: #611f34;
@@ -102,7 +101,6 @@ body {
 .navbar-toggler-shadow {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
-/*! CSS Used from: https://www.irserver2.eku.edu/Reports/DataPage/assets/index-d4e0eb73.css */
 .eastern-footer-list,
 .eastern-footer-copyright,
 .eastern-footer-link {
@@ -121,7 +119,6 @@ body {
 .eastern-footer-link:hover {
   color: rgba(var(--footer-rgb), 1) !important;
 }
-/*! CSS Used from: https://irserver2.eku.edu/reports/datapage/assets/index-d4e0eb73.css */
 .btn-toggle {
   padding: 0.25rem 0.5rem;
   font-weight: 600;
@@ -155,7 +152,6 @@ body {
 .btn-toggle-nav a:focus {
   background-color: var(--bs-tertiary-bg);
 }
-/*! CSS Used from: https://irserver2.eku.edu/reports/datapage/assets/index-d4e0eb73.css */
 .transform-align-center-justify-end {
   transform: translate(100%, -50%);
 }
@@ -203,7 +199,6 @@ body {
     opacity: 1;
   }
 }
-/*! CSS Used from: Embedded */
 .btn-maroon {
   --bs-btn-color: #ffffff;
   --bs-btn-bg: #784052;
@@ -220,7 +215,6 @@ body {
   --bs-btn-disabled-bg: #784052;
   --bs-btn-disabled-border-color: #784052;
 }
-/*! CSS Used from: Embedded ; media=all */
 @media all {
   .fa-solid {
     -moz-osx-font-smoothing: grayscale;
@@ -248,8 +242,13 @@ body {
   .fa-up-right-and-down-left-from-center:before {
     content: "\f424";
   }
+  .fa-window-maximize:before {
+    content: "\f2d0";
+  }
+  .fa-arrow-up-right-from-square:before {
+    content: "\f08e";
+  }
 }
-/*! CSS Used fontfaces */
 @font-face {
   font-family: "Font Awesome 6 Free";
   font-style: normal;
@@ -279,11 +278,9 @@ body {
     font-size: 1rem !important;
   }
 }
-/*! CSS Used from: Embedded */
 .square-button {
   padding: 1rem;
 }
-/*! CSS Used from: Embedded */
 .btn-white {
   --bs-btn-color: #000000;
   --bs-btn-bg: #ffffff;
@@ -300,6 +297,29 @@ body {
   --bs-btn-disabled-bg: #ffffff;
   --bs-btn-disabled-border-color: #ffffff;
 }
-/* .maximize-btn:focus-visible {
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-} */
+.modal-back-btn {
+  --bs-go-back-btn-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3C!--! Font Awesome Pro 6.2.1 by %40fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons  Inc. --%3E%3Cpath d='M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z'/%3E%3C/svg%3E");
+  background: transparent var(--bs-go-back-btn-bg) center/1em auto no-repeat !important;
+}
+.form-control.body-search {
+  color: rgb(33, 37, 41);
+  background-color: white;
+  background-repeat: no-repeat;
+  padding-left: calc(1.5em + 0.75rem);
+  background-position: left calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  box-shadow: inset rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    inset rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='rgb(33, 37, 41)' fill-opacity='0.75' viewBox='0 0 512 512'%3E%3C!--! Font Awesome Pro 6.2.1 by %40fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons  Inc. --%3E%3Cpath d='M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z'/%3E%3C/svg%3E");
+}
+.form-control.body-search::placeholder {
+  opacity: 0.75;
+  color: rgb(33, 37, 41);
+}
+.form-control.body-search:not(:focus) {
+  border-color: rgba(33, 37, 41, 0.5);
+}
+.card-shadow {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}

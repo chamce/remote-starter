@@ -9,13 +9,15 @@ import { Content } from "./Content";
 const styles = bootstrapStyles + wrapperStyles;
 
 export const Wrapper = ({ children }) => {
+  const fullscreenModalId = "fullscreenWindow";
+
   return (
     <>
       <style jsx global>
         {styles}
       </style>
-      <Header />
-      <Content>{children}</Content>
+      <Header fullscreenModalId={fullscreenModalId} />
+      <Content fullscreenModalId={fullscreenModalId}>{children}</Content>
       <Footer />
       <Sidebar />
     </>

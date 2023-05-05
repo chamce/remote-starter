@@ -1,7 +1,7 @@
 import { SearchBar } from "./SearchBar";
 import { ColorPicker } from "./ColorPicker";
 
-export const Header = () => {
+export const Header = ({ fullscreenModalId }) => {
   return (
     <nav
       className="mb-2 mb-sm-3 eastern-header navbar navbar-expand-lg navbar-dark bg-gradient"
@@ -66,20 +66,36 @@ export const Header = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarsExample07">
           <div className="navbar-nav my-2 my-lg-0 gap-lg-3 ms-auto">
-            <div className="nav-link py-0 py-lg-2 px-lg-0">
-              <div className="py-2 py-lg-0">
+            <div className="nav-link py-0 py-lg-2 px-lg-0 text-nowrap d-flex align-items-center">
+              <div className="py-2 py-lg-0 lh-1">
                 <ColorPicker />
               </div>
             </div>
-            <div className="nav-link py-0 py-lg-2 px-lg-0 text-nowrap">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className="eastern-nav-link fs-5"
-                href="https://tools.eku.edu/siteindex/a"
-              >
-                A-Z Index
-              </a>
+            <div className="nav-link py-0 py-lg-2 px-lg-0 text-nowrap d-flex align-items-center">
+              <div className="py-2 py-lg-0 lh-1">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="eastern-nav-link fs-5"
+                  href="https://tools.eku.edu/siteindex/a"
+                  data-bs-toggle="modal"
+                  data-bs-target={"#" + fullscreenModalId}
+                >
+                  <i className="d-flex fa-solid fa-up-right-and-down-left-from-center"></i>
+                </a>
+              </div>
+            </div>
+            <div className="nav-link py-0 py-lg-2 px-lg-0 text-nowrap d-flex align-items-center">
+              <div className="py-2 py-lg-0 lh-1">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="eastern-nav-link fs-5"
+                  href="https://tools.eku.edu/siteindex/a"
+                >
+                  A-Z Index
+                </a>
+              </div>
             </div>
           </div>
           <span className="ms-lg-3">
