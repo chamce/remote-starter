@@ -245,9 +245,6 @@ body {
   .fa-window-maximize:before {
     content: "\f2d0";
   }
-  .fa-arrow-up-right-from-square:before {
-    content: "\f08e";
-  }
 }
 @font-face {
   font-family: "Font Awesome 6 Free";

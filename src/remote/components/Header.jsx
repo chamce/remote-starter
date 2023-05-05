@@ -76,12 +76,13 @@ export const Header = ({ fullscreenModalId }) => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="eastern-nav-link fs-5"
+                  className="eastern-nav-link fs-5 icon-link"
                   href="https://tools.eku.edu/siteindex/a"
                   data-bs-toggle="modal"
                   data-bs-target={"#" + fullscreenModalId}
                 >
                   <i className="d-flex fa-solid fa-up-right-and-down-left-from-center"></i>
+                  Fullscreen
                 </a>
               </div>
             </div>
