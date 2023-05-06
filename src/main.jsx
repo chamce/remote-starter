@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { App } from "./components/App";
-import { Wrapper } from "./remote/components/Wrapper";
+import { Wrapper } from "./components/Wrapper";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
