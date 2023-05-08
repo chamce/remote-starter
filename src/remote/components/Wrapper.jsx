@@ -16,6 +16,10 @@ export const Wrapper = ({ children }) => {
     <HelmetProvider>
       <Helmet>
         <link
+          rel="shortcut icon"
+          href="https://chamce.github.io/eku-favicons/favicon.ico"
+        />
+        <link
           rel="apple-touch-icon"
           sizes="180x180"
           href="https://chamce.github.io/eku-favicons/apple-touch-icon.png"
