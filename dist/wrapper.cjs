@@ -229,19 +229,19 @@ body {\r
 }\r
 .btn-maroon {\r
   --bs-btn-color: #ffffff;\r
-  --bs-btn-bg: #784052;\r
-  --bs-btn-border-color: #784052;\r
+  --bs-btn-bg: #611f34;\r
+  --bs-btn-border-color: #611f34;\r
   --bs-btn-hover-color: #ffffff;\r
-  --bs-btn-hover-bg: #663646;\r
-  --bs-btn-hover-border-color: #603342;\r
-  --bs-btn-focus-shadow-rgb: 140, 93, 108;\r
+  --bs-btn-hover-bg: #521a2c;\r
+  --bs-btn-hover-border-color: #4e192a;\r
+  --bs-btn-focus-shadow-rgb: 121, 65, 82;\r
   --bs-btn-active-color: #ffffff;\r
-  --bs-btn-active-bg: #603342;\r
-  --bs-btn-active-border-color: #5a303e;\r
+  --bs-btn-active-bg: #4e192a;\r
+  --bs-btn-active-border-color: #491727;\r
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);\r
   --bs-btn-disabled-color: #ffffff;\r
-  --bs-btn-disabled-bg: #784052;\r
-  --bs-btn-disabled-border-color: #784052;\r
+  --bs-btn-disabled-bg: #611f34;\r
+  --bs-btn-disabled-border-color: #611f34;\r
 }\r
 @media all {\r
   .fa-solid {\r
