@@ -22,7 +22,7 @@ body {
 }
 body {
   background-color: var(--body-color);
-  font-family: "Avenir", sans-serif;
+  font-family: "Questrial", sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

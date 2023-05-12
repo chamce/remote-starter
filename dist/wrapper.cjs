@@ -43,7 +43,7 @@ body {\r
 }\r
 body {\r
   background-color: var(--body-color);\r
-  font-family: "Avenir", sans-serif;\r
+  font-family: "Questrial", sans-serif;\r
   text-rendering: optimizeLegibility;\r
   -webkit-font-smoothing: antialiased;\r
   -moz-osx-font-smoothing: grayscale;\r
