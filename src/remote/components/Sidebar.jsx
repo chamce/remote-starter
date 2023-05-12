@@ -90,7 +90,7 @@ const Button = ({ children }) => {
   return (
     <button
       style={{ marginLeft: "12px" }}
-      className="border-dark btn-maroon btn ms-sm-3 rounded-circle offcanvas-btn opacity-xs-25"
+      className="border-dark btn-maroon bg-gradient btn ms-sm-3 rounded-circle offcanvas-btn opacity-xs-25"
       type="button"
       data-bs-toggle="offcanvas"
       data-bs-target="#offcanvasExample"
