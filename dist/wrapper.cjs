@@ -295,8 +295,8 @@ body {\r
       format("truetype");\r
 }\r
 .content-shadow {\r
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12),\r
-    0px 1px 2px 0px rgba(0, 0, 0, 0.24), 0px 1px 4px 0px rgba(0, 0, 0, 0.22);\r
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.22),\r
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 2px 0px rgba(0, 0, 0, 0.24);\r
 }\r
 @media (min-width: 576px) {\r
   .fs-sm-6 {\r
@@ -344,9 +344,6 @@ body {\r
 .form-control.body-search:not(:focus) {\r
   border-color: rgba(33, 37, 41, 0.5);\r
 }\r
-.card-shadow {\r
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12);\r
-}\r
 .btn.btn-solid {\r
   box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 3px,\r
     rgba(0, 0, 0, 0.2) 0px -3px 0px inset;\r
@@ -373,6 +370,10 @@ body {\r
 .scroll-sticky-top {\r
   inset-block-start: 0;\r
   position: sticky;\r
+}\r
+.block-shadow {\r
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,\r
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;\r
 }\r
 `,os=`@charset "UTF-8";/*!
  * Bootstrap  v5.3.0-alpha3 (https://getbootstrap.com/)
