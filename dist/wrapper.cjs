@@ -348,6 +348,20 @@ body {\r
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,\r
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;\r
 }\r
+.btn.btn-solid {\r
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 3px,\r
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;\r
+}\r
+.btn-check:checked + .btn.btn-solid,\r
+.btn.btn-solid.active,\r
+.btn.btn-solid.show,\r
+.btn.btn-solid:first-child:active,\r
+:not(.btn-check) + .btn.btn-solid:active {\r
+  box-shadow: rgba(0, 0, 0, 0) 0 0 0 0;\r
+}\r
+.btn.btn-solid:hover {\r
+  box-shadow: rgba(0, 0, 0, 0) 0 0 0 0;\r
+}\r
 `,os=`@charset "UTF-8";/*!
  * Bootstrap  v5.3.0-alpha3 (https://getbootstrap.com/)
  * Copyright 2011-2023 The Bootstrap Authors
