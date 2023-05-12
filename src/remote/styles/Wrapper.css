@@ -324,8 +324,7 @@ body {
   border-color: rgba(33, 37, 41, 0.5);
 }
 .card-shadow {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12);
 }
 .btn.btn-solid {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 3px,
@@ -340,4 +339,17 @@ body {
 }
 .btn.btn-solid:hover {
   box-shadow: rgba(0, 0, 0, 0) 0 0 0 0;
+}
+.text-bg-maroon {
+  color: #fff !important;
+  background-color: RGBA(97, 31, 52, var(--bs-bg-opacity, 1)) !important;
+}
+@media (max-width: 575.98px) {
+  .fs-xs-device {
+    font-size: small !important;
+  }
+}
+.scroll-sticky-top {
+  inset-block-start: 0;
+  position: sticky;
 }
