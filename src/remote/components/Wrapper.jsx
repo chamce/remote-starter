@@ -54,7 +54,7 @@ export const Wrapper = ({ children }) => {
       <Header fullscreenModalId={fullscreenModalId} />
       <Content fullscreenModalId={fullscreenModalId}>{children}</Content>
       <Footer />
-      {/* <Sidebar /> */}
+      <Sidebar />
     </HelmetProvider>
   );
 };
