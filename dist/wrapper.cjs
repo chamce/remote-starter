@@ -122,8 +122,7 @@ body {\r
   position: absolute;\r
   top: calc(100% + 2px);\r
   border-radius: 0.375rem;\r
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,\r
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;\r
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);\r
   z-index: 1070;\r
 }\r
 .navbar-toggler-shadow {\r
@@ -216,8 +215,7 @@ body {\r
   height: 45px;\r
   transition: all 0.15s ease-in-out;\r
   border-color: rgba(var(--footer-rgb), 1) !important;\r
-  box-shadow: 0px 12px 28px 0px rgba(0, 0, 0, 0.2),\r
-    0px 2px 4px 0px rgba(0, 0, 0, 0.1);\r
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);\r
 }\r
 @media (max-width: 575.98px) {\r
   .opacity-xs-25 {\r
