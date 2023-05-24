@@ -7,7 +7,7 @@ const Container = ({ children, length = 10 }) => {
     length +
     " offset-xxl-" +
     (12 - length) / 2 +
-    " bg-white content-shadow position-relative";
+    " bg-white paper-shadow hvr-curl-top-right";
 
   return (
     <div className="container">

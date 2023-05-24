@@ -67,7 +67,6 @@ body {
 }
 .eastern-header {
   background-color: #611f34;
-  box-shadow: #091e4240 0 1px 1px, #091e4221 0 0 1px 1px;
 }
 .eku-svg {
   fill-opacity: 0.95;
@@ -94,18 +93,13 @@ body {
   top: calc(100% + 2px);
   left: 0;
   border-radius: 9px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 .radio-popover {
   left: 0;
   position: absolute;
   top: calc(100% + 2px);
   border-radius: 0.375rem;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   z-index: 1070;
-}
-.navbar-toggler-shadow {
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 .eastern-footer-list,
 .eastern-footer-copyright,
@@ -194,7 +188,6 @@ body {
   height: 45px;
   transition: all 0.15s ease-in-out;
   border-color: rgba(var(--footer-rgb), 1) !important;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 @media (max-width: 575.98px) {
   .opacity-xs-25 {
@@ -271,10 +264,6 @@ body {
     url(https://ka-f.fontawesome.com/releases/v6.4.0/webfonts/free-fa-solid-900.ttf)
       format("truetype");
 }
-.content-shadow {
-  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.22),
-    0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 2px 0px rgba(0, 0, 0, 0.24);
-}
 @media (min-width: 576px) {
   .fs-sm-6 {
     font-size: 1rem !important;
@@ -348,7 +337,58 @@ body {
   inset-block-start: 0;
   position: sticky;
 }
-.block-shadow {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+.header-shadow,
+.surface-shadow-min {
+  box-shadow: 0 1px 1px rgba(9, 30, 66, 0.25), 0 0 1px 1px rgba(9, 30, 66, 0.13);
+}
+.simple-shadow,
+.surface-shadow-1 {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,
+    rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+}
+.paper-shadow,
+.surface-shadow-2 {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px,
+    rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+}
+.dropdown-shadow,
+.surface-shadow-3 {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px -2px,
+    rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px;
+}
+.popover-shadow,
+.floating-shadow,
+.surface-shadow-4 {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px,
+    rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+}
+.backdrop-shadow,
+.surface-shadow-max {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 11px 15px -7px,
+    rgba(0, 0, 0, 0.14) 0px 24px 38px 3px, rgba(0, 0, 0, 0.12) 0px 9px 46px 8px;
+}
+.hvr-curl-top-right {
+  position: relative;
+}
+.hvr-curl-top-right:hover:before,
+.hvr-curl-top-right:focus:before,
+.hvr-curl-top-right:active:before {
+  width: 25px;
+  height: 25px;
+}
+.hvr-curl-top-right:before {
+  pointer-events: none;
+  position: absolute;
+  content: "";
+  height: 0;
+  width: 0;
+  top: 0;
+  right: 0;
+  background: white;
+  background: linear-gradient(225deg, white 45%, #aaa 50%, #ccc 56%, white 80%);
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.4);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: width, height;
+  transition-property: width, height;
 }
