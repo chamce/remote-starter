@@ -4,7 +4,7 @@ import { ColorPicker } from "./ColorPicker";
 export const Header = ({ fullscreenModalId }) => {
   return (
     <nav
-      className="mb-2 mb-sm-3 eastern-header shadow-min navbar navbar-expand-lg navbar-dark bg-gradient"
+      className="mb-2 mb-sm-3 eastern-header header-shadow navbar navbar-expand-lg navbar-dark bg-gradient"
       aria-label="Eighth navbar example"
     >
       <div className="container">
@@ -54,7 +54,7 @@ export const Header = ({ fullscreenModalId }) => {
           </div>
         </div>
         <button
-          className="navbar-toggler shadow-1"
+          className="navbar-toggler button-shadow"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarsExample07"

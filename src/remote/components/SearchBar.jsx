@@ -35,7 +35,9 @@ export const SearchBar = () => {
         aria-label="Search"
       />
       <div
-        className={"radio-popover shadow-4 w-100" + (isOpen ? "" : " d-none")}
+        className={
+          "radio-popover popover-shadow w-100" + (isOpen ? "" : " d-none")
+        }
       >
         <ul className="list-group">
           <li className="list-group-item">
