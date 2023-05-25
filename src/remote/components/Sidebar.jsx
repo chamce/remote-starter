@@ -90,7 +90,7 @@ const Button = ({ children }) => {
   return (
     <button
       style={{ marginLeft: "12px" }}
-      className="border-dark btn-maroon bg-gradient btn ms-sm-3 rounded-circle offcanvas-btn floating-shadow opacity-xs-25"
+      className="border-dark btn-maroon bg-gradient btn ms-sm-3 rounded-circle offcanvas-btn shadow-4 opacity-xs-25"
       type="button"
       data-bs-toggle="offcanvas"
       data-bs-target="#offcanvasExample"
@@ -208,7 +208,7 @@ export const Sidebar = () => {
   return (
     <>
       <div
-        className="offcanvas offcanvas-start backdrop-shadow"
+        className="offcanvas offcanvas-start shadow-max"
         tabIndex={-1}
         id="offcanvasExample"
         aria-labelledby="offcanvasExampleLabel"
