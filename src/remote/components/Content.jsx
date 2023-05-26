@@ -2,25 +2,12 @@ import { InPortal, OutPortal } from "react-reverse-portal";
 import { useFullscreenModal } from "../hooks/useFullscreenModal";
 
 const Container = ({ children, length = 10 }) => {
-  const columnClassName =
-    "col-12 col-xxl-" +
-    length +
-    " offset-xxl-" +
-    (12 - length) / 2 +
-    " bg-white shadow-4 hvr-curl-top-right";
+  const cols = "col-12 col-xxl-" + length + " offset-xxl-" + (12 - length) / 2;
 
   return (
     <div className="container">
       <div className="row">
-        <div
-          className={columnClassName}
-          style={{
-            paddingBottom: 12,
-            paddingTop: 12,
-          }}
-        >
-          {children}
-        </div>
+        <div className={"page shadow-4 " + cols}>{children}</div>
       </div>
     </div>
   );
