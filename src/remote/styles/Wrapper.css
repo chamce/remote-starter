@@ -420,12 +420,25 @@ body {
   display: inline-block;
   border-bottom-left-radius: 4px;
 } */
-.curl-container {
+.curl-rectangle {
   width: 3.2em;
   min-width: 3.2em;
   height: 1.35em;
   min-height: 1.35em;
   position: relative;
+}
+.curl-under-triangle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 21.6px 0 0 51.2px;
+  border-color: transparent transparent transparent white;
+  line-height: 0px;
+  _border-color: #000000 #000000 #000000 white;
+  _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
 }
 .curl {
   width: 1.35em;
@@ -445,15 +458,15 @@ body {
   border-bottom-left-radius: 4px;
   box-shadow: 0 6px 4px -4px #112429;
 }
-
+.border-bottom-curl {
+  border-bottom: 1px solid #3e6267 !important;
+}
 .bg-curl {
   background-color: #3e6267;
 }
-
 .rounded-1-top-start {
   border-top-left-radius: 4px;
 }
-
 .rounded-1-top-end {
   border-top-right-radius: 4px;
 }
