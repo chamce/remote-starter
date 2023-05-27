@@ -221,7 +221,9 @@ export const App = ({ dynamicModalButton }) => {
   return (
     <>
       <div className="d-flex">
-        <div className="bg-white flex-fill rounded-1-top-start backdrop-shadow"></div>
+        <div className="bg-curl flex-fill rounded-1-top-start shadow-4 position-relative">
+          <div className="position-absolute top-100 start-50 translate-middle bg-curl h-100 w-100"></div>
+        </div>
         <div className="curl-rectangle rounded-1-top-end border-bottom-curl">
           <div className="curl z-3"></div>
           <div className="curl-under-triangle"></div>
@@ -229,7 +231,7 @@ export const App = ({ dynamicModalButton }) => {
       </div>
       <div
         style={{ height: 300 }}
-        className="bg-white rounded-bottom backdrop-shadow"
+        className="bg-curl rounded-bottom shadow-4"
       ></div>
       {/* <div className="vstack gap-4">
         <TitleCard
