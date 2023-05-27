@@ -7,7 +7,7 @@ const Container = ({ children, length = 10 }) => {
   return (
     <div className="container">
       <div className="row">
-        <div className={"page shadow-4 " + cols}>{children}</div>
+        <div className={"page bg-warning shadow-4 " + cols}>{children}</div>
       </div>
     </div>
   );

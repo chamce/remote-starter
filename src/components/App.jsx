@@ -220,6 +220,16 @@ import "../styles/App.css";
 export const App = ({ dynamicModalButton }) => {
   return (
     <>
+      <div className="d-flex">
+        <div className="bg-curl flex-fill rounded-1-top-start shadow-4"></div>
+        <div className="curl-container bg-curl rounded-1-top-end">
+          <div className="curl"></div>
+        </div>
+      </div>
+      <div
+        style={{ height: 300 }}
+        className="bg-curl rounded-bottom shadow-4"
+      ></div>
       {/* <div className="vstack gap-4">
         <TitleCard
           title={"Title"}
