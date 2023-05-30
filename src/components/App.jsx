@@ -1,4 +1,5 @@
 import "../styles/App.css";
+import { Page } from "./Page";
 // import { AgGridReact } from "ag-grid-react"; // the AG Grid React Component
 // import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
 // import "ag-grid-community/styles/ag-theme-alpine.css"; // Optional theme CSS
@@ -220,7 +221,8 @@ import "../styles/App.css";
 export const App = ({ dynamicModalButton }) => {
   return (
     <>
-      <div className="d-flex">
+      <Page />
+      {/* <div className="d-flex">
         <div className="bg-curl flex-fill rounded-1-top-start shadow-4 position-relative">
           <div className="position-absolute top-100 start-50 translate-middle bg-curl h-100 w-100"></div>
         </div>
@@ -233,16 +235,31 @@ export const App = ({ dynamicModalButton }) => {
         style={{ height: 300 }}
         className="bg-curl rounded-bottom shadow-4"
       ></div>
-      {/* <div className="vstack gap-4">
-        <TitleCard
-          title={"Title"}
-          description={
-            "Some quick example text to build on the card title and make up the bulk of the card's content."
-          }
-        />
-        <Accordion />
-        <Modals dynamicModalButton={dynamicModalButton} />
-      </div> */}
+      <div className="m-5"></div> */}
+      {/* <div className="d-flex">
+        <div
+          style={{ borderTopLeftRadius: 6 }}
+          className="flex-fill bg-white shadow-4 position-relative"
+        >
+          <div className="position-absolute top-100 start-0 bg-white h-25 w-100"></div>
+        </div>
+        <div className="page-curl-rect">
+          <div
+            style={{ borderBottomLeftRadius: 6 }}
+            className="page-curl z-3"
+          ></div>
+          <div className="tri-under-page-curl"></div>
+          <div className="position-absolute top-100 start-0 bg-white h-25 w-100"></div>
+        </div>
+      </div>
+      <div
+        style={{
+          height: 300,
+          borderBottomLeftRadius: 6,
+          borderBottomRightRadius: 6,
+        }}
+        className="bg-white shadow-4"
+      ></div> */}
     </>
   );
 };
