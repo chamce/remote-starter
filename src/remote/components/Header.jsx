@@ -4,7 +4,7 @@ import { ColorPicker } from "./ColorPicker";
 export const Header = ({ fullscreenModalId }) => {
   return (
     <nav
-      className="mb-2 mb-sm-3 eastern-header header-shadow navbar navbar-expand-lg navbar-dark bg-gradient"
+      className="mb-2 mb-sm-3 eastern-header header-shadow navbar navbar-expand-lg navbar-dark bg-gradient z-3"
       aria-label="Eighth navbar example"
     >
       <div className="container">

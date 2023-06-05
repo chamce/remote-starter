@@ -1,7 +1,5 @@
 :root {
   --body-color: white;
-  --body-color-1: #f3f3f3;
-  --body-color-2: #ddd;
   --footer-rgb: 248, 249, 250;
 }
 @font-face {
@@ -378,157 +376,43 @@ body {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px,
     rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
 }
-/* .curl-rectangle {
+.folded-corner {
   width: 3.2em;
-  min-width: 3.2em;
   height: 1.35em;
-  min-height: 1.35em;
   position: relative;
+  background: linear-gradient(to right bottom, transparent 50%, white 0),
+    linear-gradient(to right bottom, var(--body-color) 50%, transparent 0);
 }
-.curl-under-triangle {
+.folded-corner::after {
+  border-right: 1px solid #212529;
+  border-bottom: 1px solid #212529;
+  content: "";
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 21.6px 0 0 51.2px;
-  border-color: transparent transparent transparent #3e6267;
-  line-height: 0px;
-  _border-color: #000000 #000000 #000000 #3e6267;
-  _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
-}
-.curl {
-  width: 1.35em;
+  top: 50%;
+  left: 50%;
   height: 3.2em;
-  transform: translate(-50%, -50%) rotate(-45deg) !important;
-  left: 50% !important;
-  top: 50% !important;
+  width: 1.35em;
+  transform: translate(-50%, -50%) rotate(45deg);
   background: linear-gradient(
-    to left bottom,
+    to right bottom,
     transparent 50%,
-    #7da9b3 0,
-    #d2f1fb 27px,
-    #025364
+    #e6e6e6 0,
+    #ffffff 27px,
+    #cccccc
   );
-  position: absolute;
-  display: inline-block;
-  border-bottom-left-radius: 4px;
-  box-shadow: 0 6px 4px -4px #112429;
+  box-shadow: 4px 0 4px -5px #333, 0 4px 4px -5px #333;
+  border-bottom-right-radius: 6px;
 }
-.border-bottom-curl {
-  border-bottom: 1px solid #3e6267 !important;
+.bg-body-color {
+  background-color: var(--body-color);
 }
-.bg-curl {
-  background-color: #3e6267;
-}
-.rounded-1-top-start {
-  border-top-left-radius: 4px;
-}
-.rounded-1-top-end {
-  border-top-right-radius: 4px;
-}
-.page-curl-rect {
-  width: 120px;
-  min-width: 120px;
-  height: 120px;
-  min-height: 120px;
-  position: relative;
-}
-.tri-under-page-curl {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 120px 0 0 120px;
-  border-color: transparent transparent transparent #ffffff;
-  line-height: 0px;
-  _border-color: #000000 #000000 #000000 #ffffff;
-  _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
-}
-.page-curl {
-  width: 120px;
-  height: 120px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: linear-gradient(
-    225deg,
-    var(--body-color),
-    var(--body-color-darker) 45%,
-    var(--body-color-darkest) 50%,
-    #aaa 50%,
-    #bbb 56%,
-    #ccc 62%,
-    #f3f3f3 80%,
-    #fff 100%
-  );
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  clip-path: inset(1px 1px -10px -10px);
-} */
-/* .curl {
-  width: 75px;
-  height: 75px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: linear-gradient(
-    225deg,
-    #fff,
-    #f3f3f3 45%,
-    #ddd 50%,
-    #aaa 50%,
-    #bbb 56%,
-    #ccc 62%,
-    #f3f3f3 80%,
-    #fff 100%
-  );
-  box-shadow: -5px 0 5px -5px #333, 0 5px 5px -5px #333;
-  border-bottom-left-radius: 6px;
+.fold-rounding {
   border-top-right-radius: 6px;
-} */
-.curl {
-  width: 120px;
-  height: 120px;
-  /* linear-gradient(
-    225deg,
-    #fff,
-    #f3f3f3 45%,
-    #ddd 50%,
-    #aaa 50%,
-    #bbb 56%,
-    #ccc 62%,
-    #f3f3f3 80%,
-    #fff 100%
-  ) */
-  background: linear-gradient(
-    225deg,
-    transparent,
-    transparent 45%,
-    transparent 50%,
-    #aaa 50%,
-    #bbb 56%,
-    #ccc 62%,
-    #f3f3f3 80%,
-    #fff 100%
-  );
-  box-shadow: -5px 0 5px -5px #333, 0 5px 5px -5px #333;
   border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
-.bg-curl {
-  background: linear-gradient(0deg, transparent, var(--body-color)),
-    linear-gradient(90deg, transparent, var(--body-color)),
-    linear-gradient(
-      225deg,
-      var(--body-color),
-      var(--body-color-1) 45%,
-      var(--body-color-2) 50%,
-      #aaa 50%,
-      #bbb 56%,
-      #ccc 62%,
-      #f3f3f3 80%,
-      #fff 100%
-    );
+.rotate {
+  transform: rotate(-22.874deg);
+  transform-origin: top right;
+  width: 55.57px;
 }

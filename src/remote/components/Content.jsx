@@ -7,7 +7,23 @@ const Container = ({ children, length = 10 }) => {
   return (
     <div className="container">
       <div className="row">
-        <div className={cols}>{children}</div>
+        <div
+          className={
+            "bg-white shadow-3 fold-rounding position-relative " + cols
+          }
+        >
+          <div className="position-absolute top-0 start-0">
+            <div className="folded-corner">
+              <div className="position-absolute h-100 bg-body-color bottom-100 w-100"></div>
+              <div className="position-absolute h-100 bg-body-color end-100 w-100"></div>
+              <div className="position-absolute h-100 bg-white rotate shadow-3 end-0"></div>
+              <div className="position-absolute h-100 bg-white start-100 w-100"></div>
+              <div className="position-absolute h-100 bg-white top-100 w-100"></div>
+              <div className="position-absolute h-100 bg-white start-100 top-100 w-100"></div>
+            </div>
+          </div>
+          {children}
+        </div>
       </div>
     </div>
   );
