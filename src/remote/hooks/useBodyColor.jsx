@@ -39,7 +39,7 @@ export const useBodyColor = () => {
   const [color, setColor] = useState(
     window.localStorage.getItem("bodyColor")
       ? window.localStorage.getItem("bodyColor")
-      : "#495057"
+      : "#D1CBC1"
   );
 
   useLayoutEffect(() => {
