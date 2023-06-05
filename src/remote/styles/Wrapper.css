@@ -376,14 +376,30 @@ body {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px,
     rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
 }
-.folded-corner {
+.shadow-5 {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px;
+}
+.page {
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background-color: white;
+  position: relative;
+}
+.fold-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.fold {
   width: 3.2em;
   height: 1.35em;
   position: relative;
   background: linear-gradient(to right bottom, transparent 50%, white 0),
     linear-gradient(to right bottom, var(--body-color) 50%, transparent 0);
 }
-.folded-corner::after {
+.fold::after {
   border-right: 1px solid #6c757d;
   border-bottom: 1px solid #6c757d;
   content: "";
@@ -403,16 +419,32 @@ body {
   box-shadow: 4px 0 4px -5px #333, 0 4px 4px -5px #333;
   border-bottom-right-radius: 6px;
 }
-.bg-body-color {
+.body-shadow-cover {
+  position: absolute;
   background-color: var(--body-color);
+  height: 100%;
+  width: 100%;
 }
-.fold-rounding {
-  border-top-right-radius: 6px;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-}
-.rotate {
+.hypotenuse {
+  position: absolute;
+  background-color: white;
   transform: rotate(-22.874deg);
   transform-origin: top right;
   width: 55.57px;
+  height: 25%;
+  right: 0;
+}
+.triangle-shadow-cover {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 21.6px 51.2px;
+  border-color: transparent transparent #ffffff transparent;
+  position: absolute;
+}
+.page-shadow-cover {
+  position: absolute;
+  background-color: white;
+  height: 100%;
+  width: 100%;
 }

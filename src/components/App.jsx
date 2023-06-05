@@ -1,7 +1,7 @@
 import "../styles/App.css";
 
 export const App = ({ dynamicModalButton }) => {
-  return <h1 className="border">Hello</h1>;
+  return null;
 };
 
 /*
