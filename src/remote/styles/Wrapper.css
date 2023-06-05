@@ -416,7 +416,9 @@ body {
     #ffffff 27px,
     #cccccc
   );
-  box-shadow: 4px 0 4px -5px #333, 0 4px 4px -5px #333;
+  /* box-shadow: 4px 0 4px -5px #333, 0 4px 4px -5px #333; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   border-bottom-right-radius: 6px;
 }
 .body-shadow-cover {
@@ -433,6 +435,8 @@ body {
   width: 55.57px;
   height: 25%;
   right: 0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.25),
+    inset 0px 0px 0px 1px rgba(255, 255, 255, 0.1);
 }
 .triangle-shadow-cover {
   width: 0;
@@ -450,4 +454,9 @@ body {
 }
 .default-transition {
   transition: all 0.15s ease-in-out;
+}
+.after-top-body-border {
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+  border-bottom: 1px solid var(--body-color);
 }

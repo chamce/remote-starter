@@ -19,12 +19,13 @@ const Fold = () => {
   return (
     <div className="fold-container">
       <div className="fold">
-        <div className="body-shadow-cover bottom-100"></div>
+        <div className="body-shadow-cover bottom-100 z-2"></div>
         <div className="body-shadow-cover end-100"></div>
-        <div className="hypotenuse shadow-5"></div>
+        <div className="hypotenuse"></div>
         <div className="triangle-shadow-cover"></div>
         <div className="page-shadow-cover start-100"></div>
         <div className="page-shadow-cover top-100"></div>
+        <div className="body-shadow-cover after-top-body-border z-2"></div>
       </div>
     </div>
   );
