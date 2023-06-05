@@ -214,7 +214,7 @@ export const Sidebar = () => {
         aria-labelledby="offcanvasExampleLabel"
       >
         <div className="position-relative d-flex flex-column h-100">
-          <div className="position-absolute end-0 top-50 transform-align-center-justify-end visible">
+          <div className="default-transition position-absolute end-0 top-50 transform-align-center-justify-end visible">
             <Button>
               <div className={"flip-card" + (direction ? " flip" : "")}>
                 <Icon />

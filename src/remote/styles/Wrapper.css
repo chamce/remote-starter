@@ -448,3 +448,6 @@ body {
   height: 100%;
   width: 100%;
 }
+.default-transition {
+  transition: all 0.15s ease-in-out;
+}
