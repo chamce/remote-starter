@@ -384,8 +384,8 @@ body {
     linear-gradient(to right bottom, var(--body-color) 50%, transparent 0);
 }
 .folded-corner::after {
-  border-right: 1px solid #212529;
-  border-bottom: 1px solid #212529;
+  border-right: 1px solid #6c757d;
+  border-bottom: 1px solid #6c757d;
   content: "";
   position: absolute;
   top: 50%;
