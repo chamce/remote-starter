@@ -19,13 +19,9 @@ const Fold = () => {
   return (
     <div className="fold-container">
       <div className="fold">
-        <div className="body-shadow-cover bottom-100 z-2"></div>
-        <div className="body-shadow-cover end-100"></div>
-        <div className="hypotenuse"></div>
-        <div className="triangle-shadow-cover"></div>
-        <div className="page-shadow-cover start-100"></div>
-        <div className="page-shadow-cover top-100"></div>
-        <div className="body-shadow-cover after-top-body-border z-2"></div>
+        <div className="body-overlay hypotenuse bottom-100 end-0" />
+        <div className="body-overlay bottom-right-rounded w-100 h-100 bottom-100" />
+        <div className="body-overlay bottom-left-rounded w-100 h-100 twelve-o-clock" />
       </div>
     </div>
   );
