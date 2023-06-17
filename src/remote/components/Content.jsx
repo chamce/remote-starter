@@ -19,7 +19,8 @@ const Fold = () => {
   return (
     <div className="fold-container">
       <div className="fold">
-        <div className="body-overlay hypotenuse bottom-100 end-0" />
+        <div className="body-overlay hypotenuse-shadow bottom-100 end-0" />
+        <div className="body-overlay hypotenuse-block z-3 bottom-50 end-50" />
         <div className="body-overlay bottom-right-rounded w-100 h-100 bottom-100" />
         <div className="body-overlay bottom-left-rounded w-100 h-100 twelve-o-clock" />
       </div>

@@ -426,14 +426,17 @@ body {
   position: absolute;
   background-color: var(--body-color);
 }
-.hypotenuse {
-  width: 55.57px;
-  height: 150%;
-  transform: rotate(-22.874deg) translate(-1px, -1px);
+.hypotenuse-shadow {
+  width: 55.7px;
+  transform: rotate(-22.9deg);
   transform-origin: bottom right;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px inset,
-    rgba(0, 0, 0, 0.14) 0px 2px 2px 0px inset,
-    rgba(0, 0, 0, 0.12) 0px 1px 5px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px -2px inset,
+    rgba(0, 0, 0, 0.14) 0px 3px 4px 0px inset,
+    rgba(0, 0, 0, 0.12) 0px 1px 8px 0px inset;
+}
+.hypotenuse-block {
+  width: 55.7px;
+  transform: rotate(-22.9deg);
 }
 .default-transition {
   transition: all 0.15s ease-in-out;
@@ -447,4 +450,7 @@ body {
 }
 .bottom-right-rounded {
   border-bottom-right-radius: 5px;
+}
+.z-4 {
+  z-index: 4 !important;
 }
