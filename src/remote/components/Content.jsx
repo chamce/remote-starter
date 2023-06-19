@@ -17,12 +17,12 @@ const Container = ({ children, length = 10 }) => {
 };
 const Fold = () => {
   return (
-    <div className="fold-container">
-      <div className="fold">
-        <div className="body-overlay hypotenuse-shadow bottom-100 end-0" />
-        <div className="body-overlay hypotenuse-block z-3 bottom-50 end-50" />
-        <div className="body-overlay bottom-right-rounded w-100 h-100 bottom-100" />
-        <div className="body-overlay bottom-left-rounded w-100 h-100 twelve-o-clock" />
+    <div className="position-absolute top-0 start-0">
+      <div className="position-relative fold-rect">
+        <div className="position-absolute bottom-100 end-0 h-100 z-2 bg-body-color inset-shadow hypot-rect" />
+        <div className="position-absolute bottom-100 end-0 h-100 z-3 bg-body-color hypot-rect-trans-up" />
+        <div className="position-absolute bottom-100 end-0 h-100 w-100 z-2 rounded-1 bg-body-color" />
+        <div className="position-absolute h-100 w-100 z-2 bg-body-color rounded-1 left-upright" />
       </div>
     </div>
   );

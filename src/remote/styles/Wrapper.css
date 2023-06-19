@@ -387,19 +387,11 @@ body {
   background-color: white;
   position: relative;
 }
-.fold-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.fold {
+.fold-rect {
   width: 3.2em;
   height: 1.35em;
-  position: relative;
-  background: linear-gradient(to right bottom, transparent 50%, white 0),
-    linear-gradient(to right bottom, var(--body-color) 50%, transparent 0);
 }
-.fold::after {
+.fold-rect::after {
   border-right: 1px solid #6c757d;
   border-bottom: 1px solid #6c757d;
   content: "";
@@ -416,40 +408,34 @@ body {
     #ffffff 27px,
     #cccccc
   );
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   border-bottom-right-radius: 6px;
 }
-.body-overlay {
-  z-index: 2;
-  height: 100%;
-  position: absolute;
-  background-color: var(--body-color);
-}
-.hypotenuse-shadow {
+.hypot-rect {
   width: 55.7px;
-  transform: rotate(-22.9deg);
+  transform: rotate(-22.874deg);
   transform-origin: bottom right;
+}
+.hypot-rect-trans-up {
+  width: 55.7px;
+  transform: rotate(-22.874deg) translateY(-50%);
+  transform-origin: bottom right;
+}
+.inset-shadow {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px -2px inset,
     rgba(0, 0, 0, 0.14) 0px 3px 4px 0px inset,
     rgba(0, 0, 0, 0.12) 0px 1px 8px 0px inset;
 }
-.hypotenuse-block {
-  width: 55.7px;
-  transform: rotate(-22.9deg);
+.bg-body-color {
+  background-color: var(--body-color) !important;
 }
 .default-transition {
   transition: all 0.15s ease-in-out;
 }
-.twelve-o-clock {
+.left-upright {
   transform: rotate(-90deg);
   transform-origin: bottom left;
-}
-.bottom-left-rounded {
-  border-bottom-left-radius: 5px;
-}
-.bottom-right-rounded {
-  border-bottom-right-radius: 5px;
 }
 .z-4 {
   z-index: 4 !important;
