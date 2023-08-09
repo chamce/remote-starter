@@ -86,6 +86,9 @@ const groups = [
   },
 ];
 
+const offcanvasId = "p4ttv70kqjll3yn46shds4r3b0umhll3yn46sy46wj25xk4ill3yn46s";
+const offcanvasLabelId = offcanvasId + "Label";
+
 const Button = ({ children }) => {
   return (
     <button
@@ -93,8 +96,8 @@ const Button = ({ children }) => {
       className="border-dark btn-maroon bg-gradient btn ms-sm-3 rounded-circle offcanvas-btn floating-shadow opacity-xs-25"
       type="button"
       data-bs-toggle="offcanvas"
-      data-bs-target="#offcanvasExample"
-      aria-controls="offcanvasExample"
+      data-bs-target={"#" + offcanvasId}
+      aria-controls={offcanvasId}
     >
       {children}
     </button>
@@ -138,7 +141,7 @@ const Header = () => {
         </svg>
         <span
           className="fs-5 fw-semibold offcanvas-title"
-          id="offcanvasExampleLabel"
+          id={offcanvasLabelId}
         >
           IE&amp;R Menu
         </span>
@@ -210,8 +213,8 @@ export const Sidebar = () => {
       <div
         className="offcanvas offcanvas-start backdrop-shadow"
         tabIndex={-1}
-        id="offcanvasExample"
-        aria-labelledby="offcanvasExampleLabel"
+        id={offcanvasId}
+        aria-labelledby={offcanvasLabelId}
       >
         <div className="position-relative d-flex flex-column h-100">
           <div className="default-transition position-absolute end-0 top-50 transform-align-center-justify-end visible">
